@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15G31" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Sentence" syncable="YES">
+        <attribute name="statement" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="word" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="sentences" inverseEntity="Word" syncable="YES"/>
+    </entity>
+    <entity name="Set" representedClassName=".Set" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="words" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="set" inverseEntity="Word" syncable="YES"/>
+    </entity>
+    <entity name="Word" representedClassName=".Word" syncable="YES">
+        <attribute name="level" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="meaning" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="spelling" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="sentences" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sentence" inverseName="word" inverseEntity="Sentence" syncable="YES"/>
+        <relationship name="set" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Set" inverseName="words" inverseEntity="Set" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Set" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Word" positionX="106" positionY="297" width="128" height="118"/>
+        <element name="Sentence" positionX="250" positionY="27" width="128" height="75"/>
+    </elements>
+</model>

@@ -1,0 +1,6 @@
+framework module Pods_WordMagic {
+  umbrella header "Pods-WordMagic-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,15 @@
+PODS:
+  - HoverConversion (0.3.1):
+    - MisterFusion (~> 2.0.0)
+  - MisterFusion (2.0.1)
+
+DEPENDENCIES:
+  - HoverConversion
+
+SPEC CHECKSUMS:
+  HoverConversion: d0ecc0c9a5bb17bfefa32c744dfa605cd66a39a9
+  MisterFusion: d42cac7afe8318c282bcda93396eba0aef45d30e
+
+PODFILE CHECKSUM: fcb4e5a6a7484de6c6b245060524a587a2280111
+
+COCOAPODS: 1.1.1

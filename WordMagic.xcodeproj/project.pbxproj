@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		181CB1591DE38D790002D4E1 /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CB1581DE38D790002D4E1 /* LevelViewController.swift */; };
+		181CB15E1DE3C8170002D4E1 /* SetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181CB15D1DE3C8170002D4E1 /* SetTableViewCell.xib */; };
+		181CB1601DE3C8CB0002D4E1 /* SetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CB15F1DE3C8CB0002D4E1 /* SetTableViewCell.swift */; };
+		181CB1621DE420A80002D4E1 /* demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CB1611DE420A80002D4E1 /* demo.swift */; };
+		188D257D1DEA261800C6E045 /* PraticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D257C1DEA261800C6E045 /* PraticeViewController.swift */; };
+		188D257F1DEB6C4B00C6E045 /* LevelWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D257E1DEB6C4B00C6E045 /* LevelWordViewController.swift */; };
+		18EEA4F11DD0FEC20022099C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA4F01DD0FEC20022099C /* AppDelegate.swift */; };
+		18EEA4F31DD0FEC20022099C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA4F21DD0FEC20022099C /* ViewController.swift */; };
+		18EEA4F61DD0FEC20022099C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EEA4F41DD0FEC20022099C /* Main.storyboard */; };
+		18EEA4F91DD0FEC20022099C /* WordMagic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA4F71DD0FEC20022099C /* WordMagic.xcdatamodeld */; };
+		18EEA4FB1DD0FEC20022099C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18EEA4FA1DD0FEC20022099C /* Assets.xcassets */; };
+		18EEA4FE1DD0FEC20022099C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EEA4FC1DD0FEC20022099C /* LaunchScreen.storyboard */; };
+		18EEA5061DD101210022099C /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA5051DD101210022099C /* SetViewController.swift */; };
+		18EEA5081DD38D050022099C /* WordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA5071DD38D050022099C /* WordListViewController.swift */; };
+		18EEA50B1DD38FDF0022099C /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA5091DD38FDF0022099C /* HomeTableViewCell.swift */; };
+		18EEA50C1DD38FDF0022099C /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EEA50A1DD38FDF0022099C /* HomeTableViewCell.xib */; };
+		18EEA50E1DD393D10022099C /* NextHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA50D1DD393D10022099C /* NextHeaderView.swift */; };
+		18EEA5101DD394100022099C /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA50F1DD394100022099C /* WordViewController.swift */; };
+		18EEA5121DD3EF730022099C /* FlashCardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EEA5111DD3EF730022099C /* FlashCardViewCell.xib */; };
+		18EEA5141DD3F1720022099C /* FlashCardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA5131DD3F1720022099C /* FlashCardViewCell.swift */; };
+		18EEA51A1DDA5EFE0022099C /* Set+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA5161DDA5EFE0022099C /* Set+CoreDataClass.swift */; };
+		18EEA51B1DDA5EFE0022099C /* Set+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA5171DDA5EFE0022099C /* Set+CoreDataProperties.swift */; };
+		18EEA51C1DDA5EFE0022099C /* Word+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA5181DDA5EFE0022099C /* Word+CoreDataClass.swift */; };
+		18EEA51D1DDA5EFE0022099C /* Word+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA5191DDA5EFE0022099C /* Word+CoreDataProperties.swift */; };
+		F945B4E99CF7DC7F6775C4D2 /* Pods_WordMagic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4344BE3A6D2D964A3C62DC6E /* Pods_WordMagic.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		181CB1581DE38D790002D4E1 /* LevelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
+		181CB15D1DE3C8170002D4E1 /* SetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetTableViewCell.xib; sourceTree = "<group>"; };
+		181CB15F1DE3C8CB0002D4E1 /* SetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTableViewCell.swift; sourceTree = "<group>"; };
+		181CB1611DE420A80002D4E1 /* demo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = demo.swift; sourceTree = "<group>"; };
+		188D257C1DEA261800C6E045 /* PraticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PraticeViewController.swift; sourceTree = "<group>"; };
+		188D257E1DEB6C4B00C6E045 /* LevelWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelWordViewController.swift; sourceTree = "<group>"; };
+		18EEA4ED1DD0FEC20022099C /* WordMagic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordMagic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18EEA4F01DD0FEC20022099C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		18EEA4F21DD0FEC20022099C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		18EEA4F51DD0FEC20022099C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18EEA4F81DD0FEC20022099C /* WordMagic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WordMagic.xcdatamodel; sourceTree = "<group>"; };
+		18EEA4FA1DD0FEC20022099C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18EEA4FD1DD0FEC20022099C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		18EEA4FF1DD0FEC20022099C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18EEA5051DD101210022099C /* SetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
+		18EEA5071DD38D050022099C /* WordListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordListViewController.swift; sourceTree = "<group>"; };
+		18EEA5091DD38FDF0022099C /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		18EEA50A1DD38FDF0022099C /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		18EEA50D1DD393D10022099C /* NextHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextHeaderView.swift; sourceTree = "<group>"; };
+		18EEA50F1DD394100022099C /* WordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordViewController.swift; path = ../WordViewController.swift; sourceTree = "<group>"; };
+		18EEA5111DD3EF730022099C /* FlashCardViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlashCardViewCell.xib; sourceTree = "<group>"; };
+		18EEA5131DD3F1720022099C /* FlashCardViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardViewCell.swift; sourceTree = "<group>"; };
+		18EEA5161DDA5EFE0022099C /* Set+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Set+CoreDataClass.swift"; sourceTree = "<group>"; };
+		18EEA5171DDA5EFE0022099C /* Set+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Set+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		18EEA5181DDA5EFE0022099C /* Word+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Word+CoreDataClass.swift"; sourceTree = "<group>"; };
+		18EEA5191DDA5EFE0022099C /* Word+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Word+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4344BE3A6D2D964A3C62DC6E /* Pods_WordMagic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WordMagic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E28F7B17C0EB9F58F376BE8E /* Pods-WordMagic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordMagic.release.xcconfig"; path = "Pods/Target Support Files/Pods-WordMagic/Pods-WordMagic.release.xcconfig"; sourceTree = "<group>"; };
+		F5A689B26B00468630940F8B /* Pods-WordMagic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordMagic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WordMagic/Pods-WordMagic.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18EEA4EA1DD0FEC20022099C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F945B4E99CF7DC7F6775C4D2 /* Pods_WordMagic.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00301ABCDDECF2E756F9416F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F5A689B26B00468630940F8B /* Pods-WordMagic.debug.xcconfig */,
+				E28F7B17C0EB9F58F376BE8E /* Pods-WordMagic.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		0815BE821CF8EA86FA6791E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4344BE3A6D2D964A3C62DC6E /* Pods_WordMagic.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18EEA4E41DD0FEC20022099C = {
+			isa = PBXGroup;
+			children = (
+				18EEA5151DDA5EE20022099C /* CoreData */,
+				18EEA4EF1DD0FEC20022099C /* WordMagic */,
+				18EEA4EE1DD0FEC20022099C /* Products */,
+				00301ABCDDECF2E756F9416F /* Pods */,
+				0815BE821CF8EA86FA6791E9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		18EEA4EE1DD0FEC20022099C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18EEA4ED1DD0FEC20022099C /* WordMagic.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18EEA4EF1DD0FEC20022099C /* WordMagic */ = {
+			isa = PBXGroup;
+			children = (
+				18EEA50D1DD393D10022099C /* NextHeaderView.swift */,
+				18EEA5131DD3F1720022099C /* FlashCardViewCell.swift */,
+				18EEA5091DD38FDF0022099C /* HomeTableViewCell.swift */,
+				18EEA5111DD3EF730022099C /* FlashCardViewCell.xib */,
+				18EEA50A1DD38FDF0022099C /* HomeTableViewCell.xib */,
+				181CB15D1DE3C8170002D4E1 /* SetTableViewCell.xib */,
+				181CB15F1DE3C8CB0002D4E1 /* SetTableViewCell.swift */,
+				18EEA4F01DD0FEC20022099C /* AppDelegate.swift */,
+				18EEA4F21DD0FEC20022099C /* ViewController.swift */,
+				18EEA4F41DD0FEC20022099C /* Main.storyboard */,
+				188D257E1DEB6C4B00C6E045 /* LevelWordViewController.swift */,
+				181CB1581DE38D790002D4E1 /* LevelViewController.swift */,
+				18EEA5051DD101210022099C /* SetViewController.swift */,
+				181CB1611DE420A80002D4E1 /* demo.swift */,
+				18EEA4FA1DD0FEC20022099C /* Assets.xcassets */,
+				18EEA4FC1DD0FEC20022099C /* LaunchScreen.storyboard */,
+				18EEA4FF1DD0FEC20022099C /* Info.plist */,
+				18EEA4F71DD0FEC20022099C /* WordMagic.xcdatamodeld */,
+				18EEA5071DD38D050022099C /* WordListViewController.swift */,
+				18EEA50F1DD394100022099C /* WordViewController.swift */,
+				188D257C1DEA261800C6E045 /* PraticeViewController.swift */,
+			);
+			path = WordMagic;
+			sourceTree = "<group>";
+		};
+		18EEA5151DDA5EE20022099C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				18EEA5161DDA5EFE0022099C /* Set+CoreDataClass.swift */,
+				18EEA5171DDA5EFE0022099C /* Set+CoreDataProperties.swift */,
+				18EEA5181DDA5EFE0022099C /* Word+CoreDataClass.swift */,
+				18EEA5191DDA5EFE0022099C /* Word+CoreDataProperties.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18EEA4EC1DD0FEC20022099C /* WordMagic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18EEA5021DD0FEC20022099C /* Build configuration list for PBXNativeTarget "WordMagic" */;
+			buildPhases = (
+				BC178B45C2BA1CAC4E0DB5C0 /* [CP] Check Pods Manifest.lock */,
+				18EEA4E91DD0FEC20022099C /* Sources */,
+				18EEA4EA1DD0FEC20022099C /* Frameworks */,
+				18EEA4EB1DD0FEC20022099C /* Resources */,
+				C875D149E1898079BE057F78 /* [CP] Embed Pods Frameworks */,
+				656B2132BE1EF0BBCD286822 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WordMagic;
+			productName = WordMagic;
+			productReference = 18EEA4ED1DD0FEC20022099C /* WordMagic.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18EEA4E51DD0FEC20022099C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Rishabh Singh";
+				TargetAttributes = {
+					18EEA4EC1DD0FEC20022099C = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 18EEA4E81DD0FEC20022099C /* Build configuration list for PBXProject "WordMagic" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 18EEA4E41DD0FEC20022099C;
+			productRefGroup = 18EEA4EE1DD0FEC20022099C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18EEA4EC1DD0FEC20022099C /* WordMagic */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18EEA4EB1DD0FEC20022099C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				181CB15E1DE3C8170002D4E1 /* SetTableViewCell.xib in Resources */,
+				18EEA4FE1DD0FEC20022099C /* LaunchScreen.storyboard in Resources */,
+				18EEA5121DD3EF730022099C /* FlashCardViewCell.xib in Resources */,
+				18EEA4FB1DD0FEC20022099C /* Assets.xcassets in Resources */,
+				18EEA50C1DD38FDF0022099C /* HomeTableViewCell.xib in Resources */,
+				18EEA4F61DD0FEC20022099C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		656B2132BE1EF0BBCD286822 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WordMagic/Pods-WordMagic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC178B45C2BA1CAC4E0DB5C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C875D149E1898079BE057F78 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WordMagic/Pods-WordMagic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18EEA4E91DD0FEC20022099C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18EEA50B1DD38FDF0022099C /* HomeTableViewCell.swift in Sources */,
+				18EEA4F91DD0FEC20022099C /* WordMagic.xcdatamodeld in Sources */,
+				18EEA50E1DD393D10022099C /* NextHeaderView.swift in Sources */,
+				181CB1591DE38D790002D4E1 /* LevelViewController.swift in Sources */,
+				18EEA5061DD101210022099C /* SetViewController.swift in Sources */,
+				18EEA51B1DDA5EFE0022099C /* Set+CoreDataProperties.swift in Sources */,
+				18EEA51A1DDA5EFE0022099C /* Set+CoreDataClass.swift in Sources */,
+				18EEA5081DD38D050022099C /* WordListViewController.swift in Sources */,
+				18EEA4F31DD0FEC20022099C /* ViewController.swift in Sources */,
+				18EEA51D1DDA5EFE0022099C /* Word+CoreDataProperties.swift in Sources */,
+				188D257D1DEA261800C6E045 /* PraticeViewController.swift in Sources */,
+				188D257F1DEB6C4B00C6E045 /* LevelWordViewController.swift in Sources */,
+				181CB1621DE420A80002D4E1 /* demo.swift in Sources */,
+				18EEA5101DD394100022099C /* WordViewController.swift in Sources */,
+				18EEA5141DD3F1720022099C /* FlashCardViewCell.swift in Sources */,
+				181CB1601DE3C8CB0002D4E1 /* SetTableViewCell.swift in Sources */,
+				18EEA4F11DD0FEC20022099C /* AppDelegate.swift in Sources */,
+				18EEA51C1DDA5EFE0022099C /* Word+CoreDataClass.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		18EEA4F41DD0FEC20022099C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18EEA4F51DD0FEC20022099C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		18EEA4FC1DD0FEC20022099C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18EEA4FD1DD0FEC20022099C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		18EEA5001DD0FEC20022099C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		18EEA5011DD0FEC20022099C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18EEA5031DD0FEC20022099C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5A689B26B00468630940F8B /* Pods-WordMagic.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WordMagic/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rishabh92.WordMagic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		18EEA5041DD0FEC20022099C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E28F7B17C0EB9F58F376BE8E /* Pods-WordMagic.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WordMagic/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rishabh92.WordMagic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18EEA4E81DD0FEC20022099C /* Build configuration list for PBXProject "WordMagic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18EEA5001DD0FEC20022099C /* Debug */,
+				18EEA5011DD0FEC20022099C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18EEA5021DD0FEC20022099C /* Build configuration list for PBXNativeTarget "WordMagic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18EEA5031DD0FEC20022099C /* Debug */,
+				18EEA5041DD0FEC20022099C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		18EEA4F71DD0FEC20022099C /* WordMagic.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				18EEA4F81DD0FEC20022099C /* WordMagic.xcdatamodel */,
+			);
+			currentVersion = 18EEA4F81DD0FEC20022099C /* WordMagic.xcdatamodel */;
+			path = WordMagic.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 18EEA4E51DD0FEC20022099C /* Project object */;
+}
