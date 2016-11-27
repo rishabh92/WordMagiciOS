@@ -18,7 +18,7 @@ class WordListViewController: HCRootViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       // navigationController?.isNavigationBarHidden = false
         navigationView.backgroundColor = UIColor(red: 85 / 255, green: 172 / 255, blue: 238 / 255, alpha: 1)
         navigationView.titleLabel.textColor = .white
         tableView.delegate = self

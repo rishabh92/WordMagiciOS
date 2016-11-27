@@ -104,7 +104,7 @@ extension LevelViewController: UITableViewDataSource {
     }
     func buttonClicked(){
         print("ia ma cliscke")
-        performSegue(withIdentifier: "practiceSession", sender: self)
+        performSegue(withIdentifier: "practiceSession1", sender: self)
         
     }
 }

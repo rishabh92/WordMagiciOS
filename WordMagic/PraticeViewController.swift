@@ -47,7 +47,6 @@ class PraticeViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor(red: 85 / 255, green: 172 / 255, blue: 238 / 255, alpha: 1)
         navigationController?.navigationBar.tintColor = UIColor.white
      //   navigationController?.navigationBar.topItem?.title = "Practice"
-     //   navigationController?.navigationItem.titleView.
         let attrs = [
             NSForegroundColorAttributeName: UIColor.white,
           //  NSFontAttributeName: UIFont(name: "Georgia-Bold", size: 24)!

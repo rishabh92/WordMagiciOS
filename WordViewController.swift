@@ -32,6 +32,7 @@ class WordViewController: HCContentViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         tableView.register(UINib(nibName: "FlashCardViewCell", bundle: nil), forCellReuseIdentifier: "FlashCardViewCell")
         tableView.dataSource = self
+      
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -83,16 +84,20 @@ extension WordViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FlashCardViewCell") as! FlashCardViewCell
    //     print("HERE-------------------------");
         let rectangle = UIView(frame: CGRect(x: 5, y: 10, width: cell.frame.size.width - 10, height: 500))
-        rectangle.alpha = 0.8
+        
         rectangle.layer.borderColor = UIColor.darkGray.cgColor
         rectangle.layer.borderWidth = 2.0
         rectangle.layer.cornerRadius = 10.0
         //rectangle.layer.backgroundColor = UIColor(red: 0 / 255, green: 0 / 255, blue: 255 / 0, alpha: 1).cgColor
         // Add the rectangle to your cell
-        cell.addSubview(rectangle)
+        
 
         
         cell.flashCardValue = (word!, "This is a Meaning", "This is first Sentence", "This is second Sentence", "This is third Sentence")
+        rectangle.layer.zPosition = 0
+        
+        cell.addSubview(rectangle)
+        rectangle.isUserInteractionEnabled = false
         return cell
     }
 }

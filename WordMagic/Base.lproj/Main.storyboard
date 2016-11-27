@@ -39,6 +39,7 @@
                     <navigationItem key="navigationItem" id="giQ-LL-jr4"/>
                     <connections>
                         <segue destination="8Du-8n-CTa" kind="show" identifier="levelWordList" id="yay-sK-dYW"/>
+                        <segue destination="80U-eQ-OjV" kind="show" identifier="practiceSession1" id="MkO-Iv-bch"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sp1-Tz-iSi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -173,7 +174,7 @@
         <scene sceneID="7ea-KW-HjE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NY5-EE-cPA" customClass="HCNavigationController" customModule="HoverConversion" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Sets" id="XjF-5A-CKA"/>
+                    <tabBarItem key="tabBarItem" title="Sets" image="storage" id="XjF-5A-CKA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UxB-F2-xYo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -304,7 +305,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MQT-5D-3dO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4863" y="990"/>
+            <point key="canvasLocation" x="5031" y="1392"/>
         </scene>
         <!--WordList-->
         <scene sceneID="Q0Y-AD-7hU">
@@ -362,12 +363,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOz-zc-eAG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5660" y="-1037.6311844077961"/>
+            <point key="canvasLocation" x="5882" y="659"/>
         </scene>
     </scenes>
     <resources>
         <image name="man" width="30" height="30"/>
         <image name="pie-chart" width="30" height="30"/>
+        <image name="storage" width="30" height="30"/>
         <image name="uptrend" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="MkO-Iv-bch"/>
+    </inferredMetricsTieBreakers>
 </document>

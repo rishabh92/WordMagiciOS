@@ -14,6 +14,7 @@ import UIKit
 class FlashCardViewCell: UITableViewCell {
     static let Height: CGFloat = 600
     
+    
 
     @IBOutlet weak var wordLabel: UILabel!
     
@@ -26,6 +27,23 @@ class FlashCardViewCell: UITableViewCell {
    
     
     @IBOutlet weak var sentenceLabel3: UILabel!
+
+    @IBAction func levelButtonPressed(_ sender: UIButton) {
+        print("Click Happende")
+        if sender.titleLabel?.text == "1" {
+            print("here")
+            
+        } else if sender.titleLabel?.text == "2" {
+            print("there 1")
+        }else if sender.titleLabel?.text == "3" {
+            print("there2")
+        }else if sender.titleLabel?.text == "4" {
+            print("there 3")
+        }
+        else if sender.titleLabel?.text == "5" {
+            print("there 4")
+        }
+    }
     
     var flashCardValue: (String , String, String, String, String )? {
         didSet {
