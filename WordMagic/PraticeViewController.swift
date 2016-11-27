@@ -32,15 +32,18 @@ class PraticeViewController: UIViewController {
         self.MeaningLabel.isHidden = true;
         
         // Do any additional setup after loading the view.
-      /*  let rectangle = UIView(frame: CGRect(x: 5, y: 10, width: 100 , height: 500))
+       let rectangle = UIView(frame: CGRect(x: 10, y: 120, width: 350 , height: 100))
         rectangle.alpha = 0.8
         rectangle.layer.borderColor = UIColor.darkGray.cgColor
         rectangle.layer.borderWidth = 2.0
         rectangle.layer.cornerRadius = 10.0
-        //rectangle.layer.backgroundColor = UIColor(red: 0 / 255, green: 0 / 255, blue: 255 / 0, alpha: 1).cgColor
-        // Add the rectangle to your cell
-        view.addSubview(rectangle)*/
-       // addViews()
+        view.addSubview(rectangle)
+        let rectangle1 = UIView(frame: CGRect(x: 10, y: 250, width: 350 , height: 300))
+        rectangle1.alpha = 0.8
+        rectangle1.layer.borderColor = UIColor.darkGray.cgColor
+        rectangle1.layer.borderWidth = 2.0
+        rectangle1.layer.cornerRadius = 10.0
+        view.addSubview(rectangle1)
         automaticallyAdjustsScrollViewInsets = false
         navigationController?.isNavigationBarHidden = false
 
@@ -52,6 +55,8 @@ class PraticeViewController: UIViewController {
           //  NSFontAttributeName: UIFont(name: "Georgia-Bold", size: 24)!
         ]
         navigationController?.navigationBar.titleTextAttributes = attrs
+        rectangle.isUserInteractionEnabled = false
+        rectangle1.isUserInteractionEnabled = false
     }
 
     override func didReceiveMemoryWarning() {
