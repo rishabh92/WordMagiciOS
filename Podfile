@@ -7,4 +7,5 @@ target 'WordMagic' do
 
   # Pods for WordMagic
     pod "HoverConversion"
+    pod "Charts"
 end

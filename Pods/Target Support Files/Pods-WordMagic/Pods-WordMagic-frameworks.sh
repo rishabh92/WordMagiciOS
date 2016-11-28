@@ -84,10 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/Charts/Charts.framework"
   install_framework "$BUILT_PRODUCTS_DIR/HoverConversion/HoverConversion.framework"
   install_framework "$BUILT_PRODUCTS_DIR/MisterFusion/MisterFusion.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/Charts/Charts.framework"
   install_framework "$BUILT_PRODUCTS_DIR/HoverConversion/HoverConversion.framework"
   install_framework "$BUILT_PRODUCTS_DIR/MisterFusion/MisterFusion.framework"
 fi

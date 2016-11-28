@@ -1,15 +1,20 @@
 PODS:
+  - Charts (3.0.0):
+    - Charts/Core (= 3.0.0)
+  - Charts/Core (3.0.0)
   - HoverConversion (0.3.1):
     - MisterFusion (~> 2.0.0)
   - MisterFusion (2.0.1)
 
 DEPENDENCIES:
+  - Charts
   - HoverConversion
 
 SPEC CHECKSUMS:
+  Charts: beb341928d2135613b4325a6c6aff9f2f6de895e
   HoverConversion: d0ecc0c9a5bb17bfefa32c744dfa605cd66a39a9
   MisterFusion: d42cac7afe8318c282bcda93396eba0aef45d30e
 
-PODFILE CHECKSUM: fcb4e5a6a7484de6c6b245060524a587a2280111
+PODFILE CHECKSUM: d38771e1836c127d14ef6c66a578944bb41f4365
 
 COCOAPODS: 1.1.1
