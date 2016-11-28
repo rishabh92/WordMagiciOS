@@ -15,7 +15,7 @@ class LevelWordViewController: HCRootViewController {
     var words = [Word]();
     //var words = ["word1", "word2", "word3", "word4", "word5", "word6","word7", "word8", "word9", "word10","word11", "word12"]
     // var levels = ["1", "2", "3", "1", "5", "3","2", "4","5", "3","2", "4"]
-    var wordList = ["ephemeral","erudite","flag","gauche","fractious","impetuous","inclement","inimical","laconic","malevolent","ostentatious","pernicious","obtuse","phlegmatic","peremptory","pragmatic","autocratic","bellicose","undermine","censure","churlish","coalesce","inimitable","petulant","solvent","aberrant","anodyne","baleful","chagrin","anathema"]
+    var wordList = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +30,9 @@ class LevelWordViewController: HCRootViewController {
         tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeTableViewCell")
         title = name
         // self.deleteIncidents()
-        for i in 0 ..< wordList.count {
-            self.saveWord(name: wordList[i])
-        }
+        //for i in 0 ..< wordList.count {
+         //   self.saveWord(name: wordList[i])
+        //}
         self.tableView.reloadData()
 
     }
@@ -134,7 +134,7 @@ extension LevelWordViewController: HCPagingViewControllerDataSource {
     func pagingViewController(_ viewController: HCPagingViewController, viewControllerFor indexPath: IndexPath) -> HCContentViewController? {
         guard 0 <= indexPath.row && indexPath.row < words.count else { return nil }
         let vc = WordViewController()
-        vc.word = words[indexPath.row].spelling
+        vc.word = words[indexPath.row]
         return vc
     }
     

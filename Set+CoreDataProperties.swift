@@ -1,13 +1,14 @@
 //
 //  Set+CoreDataProperties.swift
-//  
+//  WordMagic
 //
-//  Created by Rishabh Singh on 11/14/16.
-//
+//  Created by Haider Hameed on 11/27/16.
+//  Copyright © 2016 Rishabh Singh. All rights reserved.
 //
 
 import Foundation
 import CoreData
+
 
 extension Set {
 
@@ -16,6 +17,23 @@ extension Set {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var words: Word?
+    @NSManaged public var words: NSSet?
+
+}
+
+// MARK: Generated accessors for words
+extension Set {
+
+    @objc(addWordsObject:)
+    @NSManaged public func addToWords(_ value: Word)
+
+    @objc(removeWordsObject:)
+    @NSManaged public func removeFromWords(_ value: Word)
+
+    @objc(addWords:)
+    @NSManaged public func addToWords(_ values: NSSet)
+
+    @objc(removeWords:)
+    @NSManaged public func removeFromWords(_ values: NSSet)
 
 }

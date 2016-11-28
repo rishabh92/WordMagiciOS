@@ -28,9 +28,11 @@
 		18EEA5121DD3EF730022099C /* FlashCardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EEA5111DD3EF730022099C /* FlashCardViewCell.xib */; };
 		18EEA5141DD3F1720022099C /* FlashCardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA5131DD3F1720022099C /* FlashCardViewCell.swift */; };
 		18EEA51A1DDA5EFE0022099C /* Set+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA5161DDA5EFE0022099C /* Set+CoreDataClass.swift */; };
-		18EEA51B1DDA5EFE0022099C /* Set+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA5171DDA5EFE0022099C /* Set+CoreDataProperties.swift */; };
 		18EEA51C1DDA5EFE0022099C /* Word+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA5181DDA5EFE0022099C /* Word+CoreDataClass.swift */; };
-		18EEA51D1DDA5EFE0022099C /* Word+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA5191DDA5EFE0022099C /* Word+CoreDataProperties.swift */; };
+		953E54401DEBA96B00518143 /* Sentence+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E543C1DEBA96B00518143 /* Sentence+CoreDataClass.swift */; };
+		953E54411DEBA96B00518143 /* Sentence+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E543D1DEBA96B00518143 /* Sentence+CoreDataProperties.swift */; };
+		953E54421DEBA96B00518143 /* Word+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E543E1DEBA96B00518143 /* Word+CoreDataProperties.swift */; };
+		953E54431DEBA96B00518143 /* Set+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E543F1DEBA96B00518143 /* Set+CoreDataProperties.swift */; };
 		F945B4E99CF7DC7F6775C4D2 /* Pods_WordMagic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4344BE3A6D2D964A3C62DC6E /* Pods_WordMagic.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,10 +60,12 @@
 		18EEA5111DD3EF730022099C /* FlashCardViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlashCardViewCell.xib; sourceTree = "<group>"; };
 		18EEA5131DD3F1720022099C /* FlashCardViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardViewCell.swift; sourceTree = "<group>"; };
 		18EEA5161DDA5EFE0022099C /* Set+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Set+CoreDataClass.swift"; sourceTree = "<group>"; };
-		18EEA5171DDA5EFE0022099C /* Set+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Set+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		18EEA5181DDA5EFE0022099C /* Word+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Word+CoreDataClass.swift"; sourceTree = "<group>"; };
-		18EEA5191DDA5EFE0022099C /* Word+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Word+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4344BE3A6D2D964A3C62DC6E /* Pods_WordMagic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WordMagic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		953E543C1DEBA96B00518143 /* Sentence+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sentence+CoreDataClass.swift"; sourceTree = "<group>"; };
+		953E543D1DEBA96B00518143 /* Sentence+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sentence+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		953E543E1DEBA96B00518143 /* Word+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Word+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		953E543F1DEBA96B00518143 /* Set+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Set+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E28F7B17C0EB9F58F376BE8E /* Pods-WordMagic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordMagic.release.xcconfig"; path = "Pods/Target Support Files/Pods-WordMagic/Pods-WordMagic.release.xcconfig"; sourceTree = "<group>"; };
 		F5A689B26B00468630940F8B /* Pods-WordMagic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordMagic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WordMagic/Pods-WordMagic.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,10 +149,12 @@
 		18EEA5151DDA5EE20022099C /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				953E543C1DEBA96B00518143 /* Sentence+CoreDataClass.swift */,
+				953E543D1DEBA96B00518143 /* Sentence+CoreDataProperties.swift */,
+				953E543E1DEBA96B00518143 /* Word+CoreDataProperties.swift */,
+				953E543F1DEBA96B00518143 /* Set+CoreDataProperties.swift */,
 				18EEA5161DDA5EFE0022099C /* Set+CoreDataClass.swift */,
-				18EEA5171DDA5EFE0022099C /* Set+CoreDataProperties.swift */,
 				18EEA5181DDA5EFE0022099C /* Word+CoreDataClass.swift */,
-				18EEA5191DDA5EFE0022099C /* Word+CoreDataProperties.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -280,15 +286,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				18EEA50B1DD38FDF0022099C /* HomeTableViewCell.swift in Sources */,
+				953E54401DEBA96B00518143 /* Sentence+CoreDataClass.swift in Sources */,
+				953E54431DEBA96B00518143 /* Set+CoreDataProperties.swift in Sources */,
 				18EEA4F91DD0FEC20022099C /* WordMagic.xcdatamodeld in Sources */,
 				18EEA50E1DD393D10022099C /* NextHeaderView.swift in Sources */,
 				181CB1591DE38D790002D4E1 /* LevelViewController.swift in Sources */,
+				953E54421DEBA96B00518143 /* Word+CoreDataProperties.swift in Sources */,
 				18EEA5061DD101210022099C /* SetViewController.swift in Sources */,
-				18EEA51B1DDA5EFE0022099C /* Set+CoreDataProperties.swift in Sources */,
 				18EEA51A1DDA5EFE0022099C /* Set+CoreDataClass.swift in Sources */,
 				18EEA5081DD38D050022099C /* WordListViewController.swift in Sources */,
 				18EEA4F31DD0FEC20022099C /* ViewController.swift in Sources */,
-				18EEA51D1DDA5EFE0022099C /* Word+CoreDataProperties.swift in Sources */,
 				188D257D1DEA261800C6E045 /* PraticeViewController.swift in Sources */,
 				188D257F1DEB6C4B00C6E045 /* LevelWordViewController.swift in Sources */,
 				181CB1621DE420A80002D4E1 /* demo.swift in Sources */,
@@ -296,6 +303,7 @@
 				18EEA5141DD3F1720022099C /* FlashCardViewCell.swift in Sources */,
 				181CB1601DE3C8CB0002D4E1 /* SetTableViewCell.swift in Sources */,
 				18EEA4F11DD0FEC20022099C /* AppDelegate.swift in Sources */,
+				953E54411DEBA96B00518143 /* Sentence+CoreDataProperties.swift in Sources */,
 				18EEA51C1DDA5EFE0022099C /* Word+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

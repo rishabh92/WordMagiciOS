@@ -12,9 +12,6 @@ import HoverConversion
 class WordListViewController: HCRootViewController {
     var name = ""
     var words = [Word]();
-    //var words = ["word1", "word2", "word3", "word4", "word5", "word6","word7", "word8", "word9", "word10","word11", "word12"]
-   // var levels = ["1", "2", "3", "1", "5", "3","2", "4","5", "3","2", "4"]
-    var wordList = ["ephemeral","erudite","flag","gauche","fractious","impetuous","inclement","inimical","laconic","malevolent","ostentatious","pernicious","obtuse","phlegmatic","peremptory","pragmatic","autocratic","bellicose","undermine","censure","churlish","coalesce","inimitable","petulant","solvent","aberrant","anodyne","baleful","chagrin","anathema"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +23,7 @@ class WordListViewController: HCRootViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeTableViewCell")
         title = name
-       // self.deleteIncidents()
-        for i in 0 ..< wordList.count {
-            self.saveWord(name: wordList[i])
-        }
+       //self.deleteIncidents()
         self.tableView.reloadData()
     }
 
@@ -72,7 +66,7 @@ class WordListViewController: HCRootViewController {
     func deleteIncidents() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Words")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Word")
         request.returnsObjectsAsFaults = false
         
         do {
@@ -108,6 +102,7 @@ extension WordListViewController: UITableViewDataSource {
         if(words.count>0){
             //cell.wordValue = ((String)word, "1")
             cell.wordValue = (words[indexPath.row].spelling, "1")
+            //print(words[indexPath.row].spelling!)
         }
         return cell
     }
@@ -129,7 +124,7 @@ extension WordListViewController: HCPagingViewControllerDataSource {
     func pagingViewController(_ viewController: HCPagingViewController, viewControllerFor indexPath: IndexPath) -> HCContentViewController? {
         guard 0 <= indexPath.row && indexPath.row < words.count else { return nil }
         let vc = WordViewController()
-        vc.word = words[indexPath.row].spelling
+        vc.word = words[indexPath.row]
         return vc
     }
     

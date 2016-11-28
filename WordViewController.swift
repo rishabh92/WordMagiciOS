@@ -10,23 +10,23 @@ import UIKit
 import HoverConversion
 
 class WordViewController: HCContentViewController {
-    var word: String?
+    var word: Word? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         navigationView.backgroundColor = UIColor(red: 85 / 255, green: 172 / 255, blue: 238 / 255, alpha: 1)
         
-        if let word = word {
+
             navigationView.titleLabel.numberOfLines = 1
             let attributedText = NSMutableAttributedString()
-            attributedText.append(NSAttributedString(string: word + "\n", attributes: [
+            attributedText.append(NSAttributedString(string: (word?.spelling!)! + "\n", attributes: [
                 NSFontAttributeName : UIFont.boldSystemFont(ofSize: 14),
                 NSForegroundColorAttributeName : UIColor.white
                 ]))
             
             navigationView.titleLabel.attributedText = attributedText
-        }
+
         
       //  tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
@@ -91,9 +91,15 @@ extension WordViewController: UITableViewDataSource {
         //rectangle.layer.backgroundColor = UIColor(red: 0 / 255, green: 0 / 255, blue: 255 / 0, alpha: 1).cgColor
         // Add the rectangle to your cell
         
-
+        var sentences = String()
         
-        cell.flashCardValue = (word!, "This is a Meaning", "This is first Sentence", "This is second Sentence", "This is third Sentence")
+        for sentence in (word?.sentences)! {
+            var sent: Sentence = sentence as! Sentence
+            sentences += sent.statement!
+            sentences += "\n\n"
+        }
+        
+        cell.flashCardValue = ((word?.spelling!)!, (word?.meaning)!, sentences)
         rectangle.layer.zPosition = 0
         
         cell.addSubview(rectangle)

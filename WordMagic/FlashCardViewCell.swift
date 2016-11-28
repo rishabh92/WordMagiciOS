@@ -17,16 +17,8 @@ class FlashCardViewCell: UITableViewCell {
     
 
     @IBOutlet weak var wordLabel: UILabel!
-    
     @IBOutlet weak var meaningLabel: UILabel!
-    
-    
     @IBOutlet weak var sentenceLabel1: UILabel!
- 
-    @IBOutlet weak var sentenceLabel2: UILabel!
-   
-    
-    @IBOutlet weak var sentenceLabel3: UILabel!
 
     @IBAction func levelButtonPressed(_ sender: UIButton) {
         print("Click Happende")
@@ -45,19 +37,15 @@ class FlashCardViewCell: UITableViewCell {
         }
     }
     
-    var flashCardValue: (String , String, String, String, String )? {
+    var flashCardValue: (String, String, String)? {
         didSet {
             guard let value = flashCardValue else { return }
             let word = value.0
             let meaning = value.1
             let sentence1 = value.2
-            let sentence2 = value.3
-            let sentence3 = value.4
             wordLabel.text = word
-            meaningLabel.text = "Meaning: " + meaning
+            meaningLabel.text = meaning
             sentenceLabel1.text = sentence1
-            sentenceLabel2.text = sentence2
-            sentenceLabel3.text = sentence3
         }
     }
     
