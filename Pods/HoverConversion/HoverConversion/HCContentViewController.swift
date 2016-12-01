@@ -90,4 +90,9 @@ extension HCContentViewController: UITableViewDelegate {
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         scrollDelegate?.contentViewController(self, scrollViewDidEndDragging: scrollView, willDecelerate: decelerate)
     }
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+      //  tableView.deselectRow(at: indexPath, animated: false)
+    }
+    
 }

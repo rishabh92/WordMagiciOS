@@ -12,8 +12,16 @@ class PraticeViewController: UIViewController {
     @IBOutlet weak var meaningButton: UIButton!
 
     @IBAction func meaningButtonPressed(_ sender: UIButton) {
-        self.meaningButton.isHidden = true;
-        self.MeaningLabel.isHidden = false;
+       
+        UIView.animate(withDuration: 1, delay: 0.2, options:
+            UIViewAnimationOptions.transitionFlipFromLeft, animations: {
+                self.MeaningLabel.alpha = 1
+                self.meaningButton.alpha = 0
+            }, completion: { finished in
+                self.MeaningLabel.isHidden = false;
+                self.meaningButton.isHidden = true;
+                
+        })
     }
 
     
@@ -21,18 +29,13 @@ class PraticeViewController: UIViewController {
     
     @IBOutlet weak var MeaningLabel: UILabel!
     
-    @IBAction func nextButtonPressed(_ sender: UIButton) {
-        self.MeaningLabel.isHidden = true;
-        self.meaningButton.isHidden = false;
-        WordLabel.text = "abcd"
-        
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.MeaningLabel.isHidden = true;
         
         // Do any additional setup after loading the view.
-       let rectangle = UIView(frame: CGRect(x: 10, y: 120, width: 350 , height: 100))
+       let rectangle = UIView(frame: CGRect(x: 10, y: 70, width: 350 , height: 100))
         rectangle.alpha = 0.8
         rectangle.layer.borderColor = UIColor.darkGray.cgColor
         rectangle.layer.borderWidth = 2.0
@@ -46,10 +49,13 @@ class PraticeViewController: UIViewController {
         view.addSubview(rectangle1)
         automaticallyAdjustsScrollViewInsets = false
         navigationController?.isNavigationBarHidden = false
-
+        
         navigationController?.navigationBar.barTintColor = UIColor(red: 85 / 255, green: 172 / 255, blue: 238 / 255, alpha: 1)
         navigationController?.navigationBar.tintColor = UIColor.white
      //   navigationController?.navigationBar.topItem?.title = "Practice"
+        let testUIBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector (nextButtonPressed))
+        self.navigationItem.rightBarButtonItem  = testUIBarButtonItem
+        
         let attrs = [
             NSForegroundColorAttributeName: UIColor.white,
           //  NSFontAttributeName: UIFont(name: "Georgia-Bold", size: 24)!
@@ -65,7 +71,11 @@ class PraticeViewController: UIViewController {
     
 
     }
-    
+    func nextButtonPressed(){
+        self.MeaningLabel.isHidden = true;
+        self.meaningButton.isHidden = false;
+        WordLabel.text = "abcd"
+    }
 
     /*
     // MARK: - Navigation
