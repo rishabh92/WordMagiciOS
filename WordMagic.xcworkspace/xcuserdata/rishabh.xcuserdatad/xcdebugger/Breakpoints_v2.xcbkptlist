@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordMagic/SetViewController.swift"
-            timestampString = "502151061.925987"
+            timestampString = "502244174.195805"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "saveSet(name:words:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -75,6 +75,22 @@
             continueAfterRunningActions = "No"
             filePath = "WordMagic/SetViewController.swift"
             timestampString = "502151061.925987"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WordMagic/ViewController.swift"
+            timestampString = "502244739.329544"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
