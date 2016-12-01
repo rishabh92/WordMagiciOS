@@ -56,7 +56,7 @@ class SetViewController: HCRootViewController {
     }
     
     func isAppAlreadyLaunchedOnce() -> Bool{
-        
+
         let defaults = UserDefaults.standard
         
         if let isAppAlreadyLaunchedOnce = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
@@ -194,7 +194,6 @@ class SetViewController: HCRootViewController {
             set.name = name
             do {
                 try context.save()
-               
             } catch {
                 fatalError("Failure to save context: \(error)")
             }
@@ -204,10 +203,13 @@ class SetViewController: HCRootViewController {
     func reloadData() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
+        print("abc: start")
         let setsFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Set")
         do {
             self.names = try context.fetch(setsFetch) as! [Set]
+            print("abc: end")
             self.tableView.reloadData()
+            print("abc: end2")
         } catch {
             fatalError("Failed to fetch employees: \(error)")
         }
