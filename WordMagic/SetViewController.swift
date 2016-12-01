@@ -27,13 +27,14 @@ class SetViewController: HCRootViewController {
         
         navigationView.backgroundColor = UIColor(red: 85 / 255, green: 172 / 255, blue: 238 / 255, alpha: 1)
         navigationView.titleLabel.textColor = .white
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, 50, 0)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         //  tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeTableViewCell")
         tableView.register(UITableViewCell.self,forCellReuseIdentifier: "setName")
         self.tableView.separatorColor = UIColor(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 1)
-
+       
         //self.deleteIncidents()
         title = "Sets"
         //for i in 1 ..< 11 {
@@ -55,7 +56,7 @@ class SetViewController: HCRootViewController {
     }
     
     func isAppAlreadyLaunchedOnce() -> Bool{
-        return false
+        
         let defaults = UserDefaults.standard
         
         if let isAppAlreadyLaunchedOnce = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
@@ -193,7 +194,7 @@ class SetViewController: HCRootViewController {
             set.name = name
             do {
                 try context.save()
-                reloadData()
+               
             } catch {
                 fatalError("Failure to save context: \(error)")
             }
@@ -245,6 +246,9 @@ extension SetViewController: UITableViewDataSource {
         cell.addSubview(rectangle)
        
         cell.addSubview(button)
+        
+        
+        
         if(names.count>0){
             cell.textLabel!.text = names[indexPath.row].name
         }
@@ -269,6 +273,7 @@ extension SetViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Did Select Called")
+        tableView.deselectRow(at: indexPath, animated: false)
         let cell = tableView.cellForRow(at: indexPath)
         nameValue = cell!.textLabel!.text!
         print("tect" , nameValue)

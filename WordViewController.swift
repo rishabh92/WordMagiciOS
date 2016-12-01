@@ -59,14 +59,10 @@ class WordViewController: HCContentViewController {
 
 extension WordViewController {
     func tableView(_ tableView: UITableView, heightForRowAtIndexPath indexPath: IndexPath) -> CGFloat {
-        // guard (indexPath as NSIndexPath).row < list.count else { return 0 }
-        // let list1 = list[(indexPath as NSIndexPath).row]
-        //    let width = UIScreen.main.bounds.size.width
-        //return TWTRTweetTableViewCell.height(for: tweet, style: .compact, width: width, showingActions: false)
-        return FlashCardViewCell.Height
+         return FlashCardViewCell.Height
         
     }
-    
+
     func tableView(_ tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: IndexPath) {
         if (indexPath as NSIndexPath).row < 1 {
             //loadTweets()
@@ -94,7 +90,7 @@ extension WordViewController: UITableViewDataSource {
         var sentences = String()
         
         for sentence in (word?.sentences)! {
-            var sent: Sentence = sentence as! Sentence
+            let sent: Sentence = sentence as! Sentence
             sentences += sent.statement!
             sentences += "\n\n"
         }
@@ -104,6 +100,7 @@ extension WordViewController: UITableViewDataSource {
         
         cell.addSubview(rectangle)
         rectangle.isUserInteractionEnabled = false
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
     }
 }

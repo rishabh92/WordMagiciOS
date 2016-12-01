@@ -27,7 +27,7 @@
                                         <rect key="frame" x="0.0" y="92" width="359" height="142"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x3P-Ui-v6A" id="eqE-gd-0A0">
-                                            <frame key="frameInset" width="359" height="141"/>
+                                            <frame key="frameInset" width="359" height="141.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -67,7 +67,7 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="117"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y3o-dT-iNv" id="tlc-fp-Zma">
-                                            <frame key="frameInset" width="375" height="116"/>
+                                            <frame key="frameInset" width="375" height="116.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -230,7 +230,7 @@
         <!--View Controller-->
         <scene sceneID="XD6-3B-xbP">
             <objects>
-                <viewController id="2xR-LB-UB7" sceneMemberID="viewController">
+                <viewController id="2xR-LB-UB7" customClass="ViewController" customModule="WordMagic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SB2-YE-JGI"/>
                         <viewControllerLayoutGuide type="bottom" id="xZO-3v-Q6e"/>
@@ -238,19 +238,31 @@
                     <view key="view" contentMode="scaleToFill" id="zKc-e3-kxu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="16" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDC-r7-10F">
+                                <frame key="frameInset" minX="36" minY="72" width="312" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="znX-oX-Lrg"/>
+                    <connections>
+                        <outlet property="HelpLabel" destination="rDC-r7-10F" id="ZWs-Uk-mcU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aKj-1v-hzQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="814" y="1575"/>
+            <point key="canvasLocation" x="813.60000000000002" y="1574.6626686656673"/>
         </scene>
         <!--Search-->
         <scene sceneID="ZYA-dm-a3L">
             <objects>
                 <navigationController title="Search" automaticallyAdjustsScrollViewInsets="NO" id="zKi-Tt-wf8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="LI4-2z-CXj"/>
+                    <tabBarItem key="tabBarItem" title="Help" image="sun" id="LI4-2z-CXj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RFK-6M-kXV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -319,36 +331,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GmE-FJ-Ms0">
-                                <frame key="frameInset" minX="47" minY="116" width="274" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GmE-FJ-Ms0">
+                                <frame key="frameInset" minX="47" minY="64" width="274" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meaning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ5-OG-zNH">
-                                <frame key="frameInset" minX="47" minY="224" width="274" height="209"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKv-ZK-WjE">
-                                <frame key="frameInset" minX="308" minY="87" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Next"/>
-                                <connections>
-                                    <action selector="nextButtonPressed:" destination="80U-eQ-OjV" eventType="touchUpInside" id="U5d-dT-YPd"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFi-kB-EBN">
-                                <frame key="frameInset" minX="99" minY="313" width="177" height="30"/>
+                                <frame key="frameInset" minX="47" minY="274" width="274" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Touch to see the meaning"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Touch to see the meaning">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="meaningButtonPressed:" destination="80U-eQ-OjV" eventType="touchUpInside" id="cKb-MQ-yNR"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meaning" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ5-OG-zNH">
+                                <frame key="frameInset" minX="47" minY="164" width="274" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -363,13 +371,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOz-zc-eAG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5882" y="659"/>
+            <point key="canvasLocation" x="5880.8000000000002" y="658.92053973013503"/>
         </scene>
     </scenes>
     <resources>
         <image name="man" width="30" height="30"/>
         <image name="pie-chart" width="30" height="30"/>
         <image name="storage" width="30" height="30"/>
+        <image name="sun" width="30" height="30"/>
         <image name="uptrend" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
