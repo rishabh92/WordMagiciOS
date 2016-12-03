@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        front = UIImageView(image: UIImage(named: "image1.jpg"))
+     /*   front = UIImageView(image: UIImage(named: "image1.jpg"))
         back = UIImageView(image: UIImage(named: "back.jpg"))
         
         let singleTap = UITapGestureRecognizer(target: self, action: #selector (tapped))
@@ -32,8 +32,7 @@ class ViewController: UIViewController {
         cardView.addSubview(back)
         cardView.addGestureRecognizer(singleTap)
         cardView.isUserInteractionEnabled = true
-        view.addSubview(cardView)
-        
+        view.addSubview(cardView)*/
       
     }
 

@@ -24,13 +24,18 @@ class ChartsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.navigationBar.barTintColor = UIColor(red: 85 / 255, green: 172 / 255, blue: 238 / 255, alpha: 1)
+        navigationController?.navigationBar.tintColor = UIColor.white
+        let attrs = [
+            NSForegroundColorAttributeName: UIColor.white,
+            //  NSFontAttributeName: UIFont(name: "Georgia-Bold", size: 24)!
+        ]
+        navigationController?.navigationBar.titleTextAttributes = attrs
         
        // barChartView.noDataText = "You need to provide data for the chart."
         
-        months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
-        
+        months = ["Set 1", "Set 2", "Set 3", "Set 4", "Set 5", "Set 6", "Set 7", "Set 8", "Set 9", "Set 10"]
+        let unitsSold = [10.0, 5.0, 10.0, 4.0, 10.0, 8.0, 3.0, 9.0, 8.0, 10.0]
         setChart(dataPoints: months, values: unitsSold)
         
     //    barchartview.noDataTextDescription = "GIVE REASON"
@@ -66,12 +71,12 @@ class ChartsViewController: UIViewController {
         let chartData = BarChartData(dataSets: [chartDataSet])
         
         chartDataSet.colors = ChartColorTemplates.colorful()
-        barChartView.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 1)
+        
         barChartView.animate(xAxisDuration: 4.0, yAxisDuration: 4.0, easingOption: .easeInBounce)
         barChartView.data = chartData
         
         
-        let chartDataSetpie = PieChartDataSet(values: dataEntries, label: "Words completed in Sets")
+        let chartDataSetpie = PieChartDataSet(values: dataEntries, label: "Words in each set")
         let chartDatapie = PieChartData(dataSets: [chartDataSetpie])
         
         chartDataSetpie.colors = ChartColorTemplates.colorful()

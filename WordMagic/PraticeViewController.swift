@@ -9,9 +9,9 @@
 import UIKit
 import HoverConversion
 class PraticeViewController: UIViewController {
-    @IBOutlet weak var meaningButton: UIButton!
+   // @IBOutlet weak var meaningButton: UIButton!
 
-    @IBAction func meaningButtonPressed(_ sender: UIButton) {
+   /* @IBAction func meaningButtonPressed(_ sender: UIButton) {
        
         UIView.animate(withDuration: 1, delay: 0.2, options:
             UIViewAnimationOptions.transitionFlipFromLeft, animations: {
@@ -22,17 +22,23 @@ class PraticeViewController: UIViewController {
                 self.meaningButton.isHidden = true;
                 
         })
-    }
-
+    }*/
+    var cardView: UIView!
+    var back: UIImageView!
+    var front: UIImageView!
+    var showingBack = true
+    var dynamicTextViewInsideImageView : UILabel!
+    var dynamicMeaningInsideImageView : UILabel!
+    var progressView: UIProgressView!
+    var progressLabel: UILabel!
     
     @IBOutlet weak var WordLabel: UILabel!
     
-    @IBOutlet weak var MeaningLabel: UILabel!
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.MeaningLabel.isHidden = true;
         
         // Do any additional setup after loading the view.
        let rectangle = UIView(frame: CGRect(x: 10, y: 70, width: 350 , height: 100))
@@ -41,13 +47,13 @@ class PraticeViewController: UIViewController {
         rectangle.layer.borderWidth = 2.0
         rectangle.layer.cornerRadius = 10.0
         view.addSubview(rectangle)
-        let rectangle1 = UIView(frame: CGRect(x: 10, y: 250, width: 350 , height: 300))
+     /*   let rectangle1 = UIView(frame: CGRect(x: 10, y: 250, width: 350 , height: 300))
         rectangle1.alpha = 0.8
         rectangle1.layer.borderColor = UIColor.darkGray.cgColor
         rectangle1.layer.borderWidth = 2.0
         rectangle1.layer.cornerRadius = 10.0
         view.addSubview(rectangle1)
-        automaticallyAdjustsScrollViewInsets = false
+        automaticallyAdjustsScrollViewInsets = false    */
         navigationController?.isNavigationBarHidden = false
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 85 / 255, green: 172 / 255, blue: 238 / 255, alpha: 1)
@@ -61,8 +67,38 @@ class PraticeViewController: UIViewController {
           //  NSFontAttributeName: UIFont(name: "Georgia-Bold", size: 24)!
         ]
         navigationController?.navigationBar.titleTextAttributes = attrs
-        rectangle.isUserInteractionEnabled = false
-        rectangle1.isUserInteractionEnabled = false
+    //    rectangle.isUserInteractionEnabled = false
+      //  rectangle1.isUserInteractionEnabled = false
+        
+        front = UIImageView(image: UIImage(named: "flashcard.png"))
+        back = UIImageView(image: UIImage(named: "flashcard.png"))
+        back.frame = CGRect(x:0,y: 0,width: 350,height: 300)
+        front.frame = CGRect(x:0,y: 0,width: 350,height: 300)
+
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector (tapped))
+        
+        back.addGestureRecognizer(singleTap)
+        back.isUserInteractionEnabled = true
+        singleTap.numberOfTapsRequired = 1
+        
+        let rect = CGRect(x:10,y: 200,width: (back.frame.size.width),height: (back.frame.size.height))
+        cardView = UIView(frame: rect)
+        cardView.addSubview(back)
+        cardView.addGestureRecognizer(singleTap)
+        cardView.isUserInteractionEnabled = true
+        view.addSubview(cardView)
+        dynamicTextViewInsideImageView = UILabel(frame: CGRect(x:120,y: 100,width: 200,height: 50))
+        dynamicTextViewInsideImageView.text = "Press to show"
+        cardView.addSubview( dynamicTextViewInsideImageView)
+        dynamicMeaningInsideImageView = UILabel(frame: CGRect(x:130,y: 100,width: 300,height: 50))
+        dynamicMeaningInsideImageView.text = "Meaning"
+        progressView = UIProgressView(progressViewStyle: UIProgressViewStyle.default)
+        progressView.frame = CGRect(x:40,y: 560,width: 300,height: 50)
+        progressView.transform = progressView.transform.scaledBy(x: 1, y: 5)
+        progressLabel = UILabel(frame: CGRect(x:120,y: 520,width: 200,height: 50))
+        progressLabel.text = " Mastering 0 words"
+        view.addSubview(progressLabel)
+        view.addSubview(progressView)
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,19 +108,27 @@ class PraticeViewController: UIViewController {
 
     }
     func nextButtonPressed(){
-        self.MeaningLabel.isHidden = true;
-        self.meaningButton.isHidden = false;
+       
         WordLabel.text = "abcd"
+        UIView.transition(from: front, to: back, duration: 0, completion: nil)
+        showingBack = true
+        cardView.addSubview( dynamicTextViewInsideImageView)
+        progressView.progress += 0.1
+        let progressValue = self.progressView?.progress
+        progressLabel?.text = "Mastering \(progressValue! * 10) words"
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tapped() {
+        if (showingBack) {
+            UIView.transition(from: back, to: front, duration: 1, options: UIViewAnimationOptions.transitionFlipFromRight, completion: nil)
+            showingBack = false
+            cardView.addSubview( dynamicMeaningInsideImageView)
+        } else {
+            UIView.transition(from: front, to: back, duration: 1, options: UIViewAnimationOptions.transitionFlipFromLeft, completion: nil)
+            showingBack = true
+            cardView.addSubview( dynamicTextViewInsideImageView)
+        }
     }
-    */
+
 
 }
