@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="15G1108" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class"/>
     <entity name="Sentence" representedClassName=".Sentence" syncable="YES">
         <attribute name="statement" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="word" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="sentences" inverseEntity="Word" syncable="YES"/>
@@ -19,5 +20,6 @@
         <element name="Sentence" positionX="-81" positionY="357" width="128" height="73"/>
         <element name="Set" positionX="376" positionY="576" width="128" height="73"/>
         <element name="Word" positionX="115" positionY="423" width="128" height="118"/>
+        <element name="Entity" positionX="126" positionY="486" width="128" height="45"/>
     </elements>
 </model>
