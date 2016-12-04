@@ -23,7 +23,7 @@ class PraticeViewController: UIViewController {
                 
         })
     }*/
-    
+    var firstTime = true;
     var cardView: UIView!
     var back: UIImageView!
     var front: UIImageView!
@@ -39,7 +39,7 @@ class PraticeViewController: UIViewController {
     var learningLabel: UILabel!
     var reviewingView: UIProgressView!
     var reviewingLabel: UILabel!
-    
+    var spacedAlgo = SpacedRepetitionAlgo();
     @IBOutlet weak var WordLabel: UILabel!
     
 
@@ -75,9 +75,7 @@ class PraticeViewController: UIViewController {
           //  NSFontAttributeName: UIFont(name: "Georgia-Bold", size: 24)!
         ]
         navigationController?.navigationBar.titleTextAttributes = attrs
-    //    rectangle.isUserInteractionEnabled = false
-      //  rectangle1.isUserInteractionEnabled = false
-        
+
         front = UIImageView(image: UIImage(named: "flashcard.png"))
         back = UIImageView(image: UIImage(named: "flashcard.png"))
         back.frame = CGRect(x:0,y: 0,width: 350,height: 340)
@@ -98,10 +96,11 @@ class PraticeViewController: UIViewController {
         dynamicTextViewInsideImageView = UILabel(frame: CGRect(x:120,y: 100,width: 200,height: 50))
         dynamicTextViewInsideImageView.text = "Press to show"
         cardView.addSubview( dynamicTextViewInsideImageView)
-        dynamicMeaningInsideImageView = UILabel(frame: CGRect(x:130,y: 50,width: 300,height: 50))
-        dynamicMeaningInsideImageView.text = "Meaning"
-        dynamicSentencesInsideImageView = UILabel(frame: CGRect(x:130,y: 80,width: 300,height: 200))
-        dynamicSentencesInsideImageView.text = "Sentence"
+        dynamicMeaningInsideImageView = UILabel(frame: CGRect(x:30,y: 30,width: 300,height: 50))
+        dynamicMeaningInsideImageView.numberOfLines = 4
+        //dynamicMeaningInsideImageView.text = "Meaning"
+        dynamicSentencesInsideImageView = UILabel(frame: CGRect(x:30,y: 80,width: 300,height: 200))
+        dynamicSentencesInsideImageView.numberOfLines = 13
         knowThisWord = UIButton(frame: CGRect(x:100,y: 300,width: 40,height: 30))
         knowThisWord.backgroundColor = UIColor.gray
         knowThisWord.addTarget(self, action: #selector(markKnown), for: UIControlEvents.touchUpInside)
@@ -131,8 +130,13 @@ class PraticeViewController: UIViewController {
         reviewingLabel.text = " Reviewing 0 words"
         view.addSubview(reviewingLabel)
         view.addSubview(reviewingView)
-
-
+        WordLabel.text = spacedAlgo.get_next().word.spelling
+        dynamicMeaningInsideImageView.text = spacedAlgo.get_next().word.meaning
+        
+        
+        
+        dynamicSentencesInsideImageView.text = get_sentences(value: spacedAlgo.get_next())
+      
     }
 
     override func didReceiveMemoryWarning() {
@@ -143,26 +147,52 @@ class PraticeViewController: UIViewController {
     }
     func markKnown(){
         print("yes")
-        SpacedRepetitionAlgo().mark_yes()
+        spacedAlgo.mark_yes()
+        nextButtonPressed()
       
     }
     func markUnKnown(){
         print("no")
-        SpacedRepetitionAlgo().mark_no()
+        spacedAlgo.mark_no()
+        nextButtonPressed()
         
     }
     func nextButtonPressed(){
        
-        if(SpacedRepetitionAlgo().has_next()){
-             SpacedRepetitionAlgo().get_next()
+        if(spacedAlgo.has_next()){
+            let word = spacedAlgo.get_next()
+            WordLabel.text = word.word.spelling
+            dynamicMeaningInsideImageView.text = word.word.meaning
+            dynamicSentencesInsideImageView.text = get_sentences(value: word)
+            UIView.transition(from: front, to: back, duration: 0, completion: nil)
+            showingBack = true
+            cardView.addSubview( dynamicTextViewInsideImageView)
+            let mastered = spacedAlgo.get_mastered()
+            print(mastered)
+            progressView.progress = Float(mastered)/50.0
+            let progressValue = mastered
+            progressLabel?.text = "Mastering \(progressValue) words"
+            let learning = spacedAlgo.get_learning()
+            learningView.progress = Float(learning)/50.0
+            let learningValue = learning
+            learningLabel?.text = "Learning \(learningValue) words"
+            let reviewing = spacedAlgo.get_learning()
+            reviewingView.progress = Float(reviewing)/50.0
+            let reviewingValue = reviewing
+            reviewingLabel?.text = "Reviewing \(reviewingValue) words"
         }
-        WordLabel.text = "abcd"
-        UIView.transition(from: front, to: back, duration: 0, completion: nil)
-        showingBack = true
-        cardView.addSubview( dynamicTextViewInsideImageView)
-        progressView.progress += 0.1
-        let progressValue = self.progressView?.progress
-        progressLabel?.text = "Mastering \(progressValue! * 10) words"
+        
+    }
+    func get_sentences(value: SRAElem) -> String {
+        
+        var sentences = String()
+        for sentence in (value.word.sentences)! {
+            let sent: Sentence = sentence as! Sentence
+            sentences += sent.statement!
+            sentences += "\n\n"
+        }
+        return sentences
+        
     }
 
     func tapped() {
