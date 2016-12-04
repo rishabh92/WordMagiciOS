@@ -34,6 +34,7 @@
 		953E54421DEBA96B00518143 /* Word+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E543E1DEBA96B00518143 /* Word+CoreDataProperties.swift */; };
 		953E54431DEBA96B00518143 /* Set+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E543F1DEBA96B00518143 /* Set+CoreDataProperties.swift */; };
 		959C03571DF346B5002EB464 /* SpacedRepetitionAlgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C03561DF346B5002EB464 /* SpacedRepetitionAlgo.swift */; };
+		AD0099D41DF3EE990001F4A0 /* SRAElem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0099D31DF3EE990001F4A0 /* SRAElem.swift */; };
 		AD5051C71DF3537600A8989D /* CharData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5051C61DF3537600A8989D /* CharData.swift */; };
 		AD91F5B71DEBCEBE0061F28B /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91F5B61DEBCEBE0061F28B /* ChartsViewController.swift */; };
 		F945B4E99CF7DC7F6775C4D2 /* Pods_WordMagic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4344BE3A6D2D964A3C62DC6E /* Pods_WordMagic.framework */; };
@@ -70,6 +71,7 @@
 		953E543E1DEBA96B00518143 /* Word+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Word+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		953E543F1DEBA96B00518143 /* Set+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Set+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		959C03561DF346B5002EB464 /* SpacedRepetitionAlgo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacedRepetitionAlgo.swift; sourceTree = "<group>"; };
+		AD0099D31DF3EE990001F4A0 /* SRAElem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRAElem.swift; sourceTree = "<group>"; };
 		AD5051C61DF3537600A8989D /* CharData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharData.swift; sourceTree = "<group>"; };
 		AD91F5B61DEBCEBE0061F28B /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		E28F7B17C0EB9F58F376BE8E /* Pods-WordMagic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordMagic.release.xcconfig"; path = "Pods/Target Support Files/Pods-WordMagic/Pods-WordMagic.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		959C03551DF34673002EB464 /* SRAlgo */ = {
 			isa = PBXGroup;
 			children = (
+				AD0099D31DF3EE990001F4A0 /* SRAElem.swift */,
 				959C03561DF346B5002EB464 /* SpacedRepetitionAlgo.swift */,
 			);
 			name = SRAlgo;
@@ -312,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18EEA50B1DD38FDF0022099C /* HomeTableViewCell.swift in Sources */,
+				AD0099D41DF3EE990001F4A0 /* SRAElem.swift in Sources */,
 				953E54401DEBA96B00518143 /* Sentence+CoreDataClass.swift in Sources */,
 				953E54431DEBA96B00518143 /* Set+CoreDataProperties.swift in Sources */,
 				18EEA4F91DD0FEC20022099C /* WordMagic.xcdatamodeld in Sources */,
