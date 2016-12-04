@@ -9,6 +9,31 @@
 import UIKit
 import Charts
 import CoreData
+import Foundation
+
+
+@objc(BarChartFormatter)
+public class BarChartFormatter: NSObject, IAxisValueFormatter{
+    
+    var dates: [String]
+    
+    init(dates : [String]) {
+    
+        self.dates = dates
+    
+    }
+    
+    
+    public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        
+        return dates[Int(value)]
+    }
+}
+
+
+
+
+
 
 
 class ChartsViewController: UIViewController {
@@ -34,9 +59,23 @@ class ChartsViewController: UIViewController {
         
        // barChartView.noDataText = "You need to provide data for the chart."
         
-        months = ["Set 1", "Set 2", "Set 3", "Set 4", "Set 5", "Set 6", "Set 7", "Set 8", "Set 9", "Set 10"]
-        let unitsSold = [10.0, 5.0, 10.0, 4.0, 10.0, 8.0, 3.0, 9.0, 8.0, 10.0]
-        setChart(dataPoints: months, values: unitsSold)
+        var chartdatadown = ChartData(key: "down")
+        //var chartdataup = ChartData(key: "up")
+        chartdatadown.levelOfWordChanged(key: "down")
+        
+        
+        var wordCounts = chartdatadown.getChartDataValues(key: "down")
+        var dates = chartdatadown.getChartDataDates(key: "down")
+        
+        
+        
+        
+        
+        //months = ["Set 1", "Set 2", "Set 3", "Set 4", "Set 5", "Set 6", "Set 7", "Set 8", "Set 9", "Set 10"]
+        //let unitsSold = [10.0, 5.0, 10.0, 4.0, 10.0, 8.0, 3.0, 9.0, 8.0, 10.0]
+        
+        
+        setChart(dataPoints: dates, values: wordCounts)
         
     //    barchartview.noDataTextDescription = "GIVE REASON"
 
@@ -49,8 +88,12 @@ class ChartsViewController: UIViewController {
     }
     
     
-    func setChart(dataPoints: [String], values: [Double]) {
+    func setChart(dataPoints: [String], values: [Int]) {
         barChartView.noDataText = "You need to provide data for the chart."
+        
+
+        let formato:BarChartFormatter = BarChartFormatter(dates: dataPoints)
+        let xaxis:XAxis = XAxis()
         
         var dataEntries: [BarChartDataEntry] = []
         print (dataPoints.count)
@@ -58,20 +101,29 @@ class ChartsViewController: UIViewController {
             //let dataEntry = BarChartDataEntry(x: Double(i), yValues: values, label: dataPoints[i])
             //dataEntries.append(dataEntry)
             
-            let dataEntry = BarChartDataEntry(x:Double(i),y: values[i])
+            let dataEntry = BarChartDataEntry(x:Double(i),y: Double(values[i]))
             
             dataEntries.append(dataEntry)
+            
+            formato.stringForValue(Double(i), axis: xaxis)
             
             //Labeling axes not supported with this version of iOS Charts.  Can still do
             
             //indexing and use number of days ago.  Will have to use label to title axes
         }
         
+        xaxis.valueFormatter = formato
+
+        
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "Words completed in Sets")
         let chartData = BarChartData(dataSets: [chartDataSet])
         
         chartDataSet.colors = ChartColorTemplates.colorful()
         
+        barChartView.xAxis.granularityEnabled = true
+        barChartView.xAxis.granularity = 1.0 //default granularity is 1.0, but it is better to be explicit
+        barChartView.xAxis.decimals = 0
+        barChartView.xAxis.valueFormatter = xaxis.valueFormatter
         barChartView.animate(xAxisDuration: 4.0, yAxisDuration: 4.0, easingOption: .easeInBounce)
         barChartView.data = chartData
         

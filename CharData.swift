@@ -10,45 +10,49 @@ import Foundation
 
 
 class ChartData {
-    var startDate : Date
     var valueArr = [Int]()
     var dateArr = [Date]()
-    var endDate : Date
     
 
     
     
-    init() {
-
+    init(key : String) {
+ 
+        let defaults = UserDefaults.standard
+        valueArr = defaults.object(forKey: key+"chartdatavalue") as? [Int] ?? [Int]()
+        dateArr = defaults.object(forKey:   key+"chartdatadate") as? [Date] ?? [Date]()
     }
     
     
-    func levelOfWordChanged() {
+    func levelOfWordChanged(key : String) {
         
         
         let currentDate = Date()
         
-        let defaults = UserDefaults.standard
         
-        if (dateArr.count > 0)
-        {
-            valueArr = defaults.object(forKey: "chartdatavalue") as? [Int] ?? [Int]()
-            dateArr = defaults.object(forKey: "chartdatadate") as? [Date] ?? [Date]()
-        }
-        else
+        if (dateArr.count == 0)
         {
             
-            valueArr.append(1);
+            valueArr.append(0);
             dateArr.append(currentDate);
-            defaults.set(currentDate, forKey: "startdate")
+            //defaults.set(currentDate, forKey: "startdate")
         }
+
        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date1String = dateFormatter.string(from: currentDate)
+        let date2String = dateFormatter.string(from: dateArr[dateArr.count-1])
         
-        if (dateArr[dateArr.count-1] == currentDate)
+        //let dateComparisionResult:ComparisonResult = currentDate.compare(dateArr[dateArr.count-1])
+        
+        if (date1String == date2String)
         {
+            print("---------");
             valueArr[valueArr.count-1] += 1;
-            
-            
+            print(valueArr[valueArr.count-1])
+            print(dateArr[dateArr.count-1])
+
         }
         else
         {
@@ -72,34 +76,45 @@ class ChartData {
         }
 
         
-        
-        defaults.set(valueArr, forKey: "chartdatavalue")
-        defaults.set(dateArr, forKey: "chartdatadate")
+        let defaults = UserDefaults.standard
+
+        defaults.set(valueArr, forKey: key+"chartdatavalue")
+        defaults.set(dateArr, forKey: key+"chartdatadate")
         defaults.set(currentDate, forKey: "enddate")
 
         
     }
     
     
-    func getChartDataValues() -> [Int] {
+    func getChartDataValues(key: String) -> [Int] {
     
         let defaults = UserDefaults.standard
-        let array = defaults.object(forKey: "chartdatavalue") as? [Int] ?? [Int]()
+        let array = defaults.object(forKey: key+"chartdatavalue") as? [Int] ?? [Int]()
 
     return array
     
     }
  
     
-    func getChartDataDates() -> [Date] {
+    func getChartDataDates(key: String) -> [String] {
         
         let defaults = UserDefaults.standard
-        let array = defaults.object(forKey: "chartdatadate") as? [Date] ?? [Date]()
+        let array = defaults.object(forKey: key+"chartdatadate") as? [Date] ?? [Date]()
         
-        //var strdate = [String]()
+        var strdates = [String]()
         
-        return array
+        for i in array
+        {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            
+            let dateString = dateFormatter.string(from: i)
+            
+            strdates.append(dateString)
+            
+        }
         
+        return strdates
     }
     
     
