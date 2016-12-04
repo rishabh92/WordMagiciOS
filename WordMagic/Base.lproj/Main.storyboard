@@ -211,7 +211,7 @@
         <scene sceneID="ZYA-dm-a3L">
             <objects>
                 <navigationController title="Search" automaticallyAdjustsScrollViewInsets="NO" id="zKi-Tt-wf8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Help" image="sun" id="LI4-2z-CXj"/>
+                    <tabBarItem key="tabBarItem" title="" systemItem="search" id="LI4-2z-CXj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RFK-6M-kXV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -304,7 +304,6 @@
         <!--Report-->
         <scene sceneID="6p3-3x-nyy">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ogg-Y8-Myp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="fS4-n0-ide" customClass="ChartsViewController" customModule="WordMagic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NR2-eQ-ulD"/>
@@ -334,6 +333,7 @@
                         <outlet property="pieChartView" destination="h80-fB-Yj4" id="fZH-AO-dNF"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ogg-Y8-Myp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1068" y="-1671.8140929535234"/>
         </scene>
@@ -423,7 +423,6 @@
         <image name="man" width="30" height="30"/>
         <image name="pie-chart" width="30" height="30"/>
         <image name="storage" width="30" height="30"/>
-        <image name="sun" width="30" height="30"/>
         <image name="uptrend" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>

@@ -18,6 +18,7 @@ class SpacedRepetitionAlgo {
     }
     
     func mark_yes() {
+        print("You are in a new class")
     }
     
     func mark_no() {
