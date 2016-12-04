@@ -113,21 +113,22 @@ class PraticeViewController: UIViewController {
         progressView.frame = CGRect(x:40,y: 540,width: 300,height: 50)
         progressView.transform = progressView.transform.scaledBy(x: 1, y: 4)
         progressLabel = UILabel(frame: CGRect(x:120,y: 500,width: 200,height: 50))
-        progressLabel.text = " Mastering 0 words"
+        let total = spacedAlgo.get_total()
+        progressLabel.text = "Mastered 0 of \(total) words"
         view.addSubview(progressLabel)
         view.addSubview(progressView)
         learningView = UIProgressView(progressViewStyle: UIProgressViewStyle.default)
         learningView.frame = CGRect(x:40,y: 600,width: 300,height: 20)
         learningView.transform = progressView.transform.scaledBy(x: 1, y: 1)
         learningLabel = UILabel(frame: CGRect(x:120,y: 560,width: 200,height: 50))
-        learningLabel.text = " Learning   0 words"
+        learningLabel.text = "Learning 0 of \(total) words"
         view.addSubview(learningLabel)
         view.addSubview(learningView)
         reviewingView = UIProgressView(progressViewStyle: UIProgressViewStyle.default)
         reviewingView.frame = CGRect(x:40,y: 570,width: 300,height: 20)
         reviewingView.transform = progressView.transform.scaledBy(x: 1, y: 1)
         reviewingLabel = UILabel(frame: CGRect(x:120,y: 530,width: 200,height: 50))
-        reviewingLabel.text = " Reviewing 0 words"
+        reviewingLabel.text = "Reviewing 0 of \(total) words"
         view.addSubview(reviewingLabel)
         view.addSubview(reviewingView)
         WordLabel.text = spacedAlgo.get_next().word.spelling
@@ -147,19 +148,23 @@ class PraticeViewController: UIViewController {
     }
     func markKnown(){
         print("yes")
+        let word = spacedAlgo.get_next()
+        print("\(word.word.spelling)\t\(word.state)")
         spacedAlgo.mark_yes()
+        print("\(word.word.spelling)\t\(word.state)")
         nextButtonPressed()
       
     }
     func markUnKnown(){
         print("no")
+        let word = spacedAlgo.get_next()
+        print("\(word.word.spelling)\t\(word.state)")
         spacedAlgo.mark_no()
+        print("\(word.word.spelling)\t\(word.state)")
         nextButtonPressed()
         
     }
     func nextButtonPressed(){
-       
-        if(spacedAlgo.has_next()){
             let word = spacedAlgo.get_next()
             WordLabel.text = word.word.spelling
             dynamicMeaningInsideImageView.text = word.word.meaning
@@ -167,21 +172,20 @@ class PraticeViewController: UIViewController {
             UIView.transition(from: front, to: back, duration: 0, completion: nil)
             showingBack = true
             cardView.addSubview( dynamicTextViewInsideImageView)
+            let total = spacedAlgo.get_total()
             let mastered = spacedAlgo.get_mastered()
             print(mastered)
             progressView.progress = Float(mastered)/50.0
             let progressValue = mastered
-            progressLabel?.text = "Mastering \(progressValue) words"
+            progressLabel?.text = "Mastered \(progressValue) of \(total) words"
             let learning = spacedAlgo.get_learning()
             learningView.progress = Float(learning)/50.0
             let learningValue = learning
-            learningLabel?.text = "Learning \(learningValue) words"
-            let reviewing = spacedAlgo.get_learning()
+            learningLabel?.text = "Learning \(learningValue) of \(total) words"
+            let reviewing = spacedAlgo.get_reviewing()
             reviewingView.progress = Float(reviewing)/50.0
             let reviewingValue = reviewing
-            reviewingLabel?.text = "Reviewing \(reviewingValue) words"
-        }
-        
+            reviewingLabel?.text = "Reviewing \(reviewingValue) of \(total) words"
     }
     func get_sentences(value: SRAElem) -> String {
         

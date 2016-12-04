@@ -25,7 +25,7 @@ class SpacedRepetitionAlgo {
         } catch {
             fatalError("Failed to fetch : \(error)")
         }
-        next_state = [-1, 1, 3, 7, -1]
+        next_state = [-1, 3, 7, -1, -1]
     }
     
     func has_next() -> Bool {
@@ -38,12 +38,13 @@ class SpacedRepetitionAlgo {
     
     func mark_yes() {
         let word = words.remove(at: 0)
-        if next_state[word.state] < 0 {
+        let state = next_state[word.state]
+        if state < 0 {
             word.state = 4
             words.append(word)
         } else {
             word.state += 1
-            words.insert(word, at: next_state[word.state])
+            words.insert(word, at: state)
         }
     }
     
