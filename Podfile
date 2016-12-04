@@ -8,4 +8,6 @@ target 'WordMagic' do
   # Pods for WordMagic
     pod "HoverConversion"
     pod "Charts"
+    #pod 'Buckets', '~> 1.2.0'
+    
 end

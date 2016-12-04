@@ -34,6 +34,8 @@
 		953E54421DEBA96B00518143 /* Word+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E543E1DEBA96B00518143 /* Word+CoreDataProperties.swift */; };
 		953E54431DEBA96B00518143 /* Set+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E543F1DEBA96B00518143 /* Set+CoreDataProperties.swift */; };
 		959C03571DF346B5002EB464 /* SpacedRepetitionAlgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C03561DF346B5002EB464 /* SpacedRepetitionAlgo.swift */; };
+		AD5051C71DF3537600A8989D /* CharData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5051C61DF3537600A8989D /* CharData.swift */; };
+		AD5051C91DF357FC00A8989D /* Queue-Simple.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5051C81DF357FC00A8989D /* Queue-Simple.swift */; };
 		AD91F5B71DEBCEBE0061F28B /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91F5B61DEBCEBE0061F28B /* ChartsViewController.swift */; };
 		F945B4E99CF7DC7F6775C4D2 /* Pods_WordMagic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4344BE3A6D2D964A3C62DC6E /* Pods_WordMagic.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +71,8 @@
 		953E543E1DEBA96B00518143 /* Word+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Word+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		953E543F1DEBA96B00518143 /* Set+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Set+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		959C03561DF346B5002EB464 /* SpacedRepetitionAlgo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacedRepetitionAlgo.swift; sourceTree = "<group>"; };
+		AD5051C61DF3537600A8989D /* CharData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharData.swift; sourceTree = "<group>"; };
+		AD5051C81DF357FC00A8989D /* Queue-Simple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Queue-Simple.swift"; sourceTree = "<group>"; };
 		AD91F5B61DEBCEBE0061F28B /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		E28F7B17C0EB9F58F376BE8E /* Pods-WordMagic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordMagic.release.xcconfig"; path = "Pods/Target Support Files/Pods-WordMagic/Pods-WordMagic.release.xcconfig"; sourceTree = "<group>"; };
 		F5A689B26B00468630940F8B /* Pods-WordMagic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordMagic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WordMagic/Pods-WordMagic.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 		18EEA4E41DD0FEC20022099C = {
 			isa = PBXGroup;
 			children = (
+				AD5051C51DF3534000A8989D /* ChartInterface */,
 				959C03551DF34673002EB464 /* SRAlgo */,
 				18EEA5151DDA5EE20022099C /* CoreData */,
 				18EEA4EF1DD0FEC20022099C /* WordMagic */,
@@ -171,6 +176,15 @@
 				959C03561DF346B5002EB464 /* SpacedRepetitionAlgo.swift */,
 			);
 			name = SRAlgo;
+			sourceTree = "<group>";
+		};
+		AD5051C51DF3534000A8989D /* ChartInterface */ = {
+			isa = PBXGroup;
+			children = (
+				AD5051C81DF357FC00A8989D /* Queue-Simple.swift */,
+				AD5051C61DF3537600A8989D /* CharData.swift */,
+			);
+			name = ChartInterface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +322,8 @@
 				959C03571DF346B5002EB464 /* SpacedRepetitionAlgo.swift in Sources */,
 				181CB1591DE38D790002D4E1 /* LevelViewController.swift in Sources */,
 				953E54421DEBA96B00518143 /* Word+CoreDataProperties.swift in Sources */,
+				AD5051C71DF3537600A8989D /* CharData.swift in Sources */,
+				AD5051C91DF357FC00A8989D /* Queue-Simple.swift in Sources */,
 				18EEA5061DD101210022099C /* SetViewController.swift in Sources */,
 				18EEA51A1DDA5EFE0022099C /* Set+CoreDataClass.swift in Sources */,
 				18EEA5081DD38D050022099C /* WordListViewController.swift in Sources */,

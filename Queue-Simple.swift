@@ -8,7 +8,7 @@
   implemented with a linked list, then both would be O(1).
 */
 public struct Queue<T> {
-  fileprivate var array = [T]()
+  public var array = [T]()
 
   public var count: Int {
     return array.count
@@ -19,7 +19,15 @@ public struct Queue<T> {
   }
 
   public mutating func enqueue(_ element: T) {
+    
+    
+    if count == 10
+    {
+        self.dequeue()
+    }
+    
     array.append(element)
+    
   }
 
   public mutating func dequeue() -> T? {
@@ -33,4 +41,6 @@ public struct Queue<T> {
   public func peek() -> T? {
     return array.first
   }
+    
+    
 }
