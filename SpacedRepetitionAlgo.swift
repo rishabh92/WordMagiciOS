@@ -49,6 +49,7 @@ class SpacedRepetitionAlgo {
     
     func mark_no() {
         let word = words.remove(at: 0)
+        word.state = 1
         words.insert(word, at: 1)
     }
     
