@@ -137,10 +137,10 @@ class ChartsViewController: UIViewController {
         var colors: [UIColor] = []
         
         colors.append(UIColor.purple)
-        colors.append(UIColor.blue)
+        colors.append(UIColor.cyan)
         colors.append(UIColor.orange)
         colors.append(UIColor.red)
-        colors.append(UIColor.orange)
+        colors.append(UIColor.magenta)
 
         
         chartDataSetpie.colors = colors
@@ -156,12 +156,12 @@ class ChartsViewController: UIViewController {
 //        
         //legend.setCustom(entries: <#T##[LegendEntry]#>)
         //legend.labels = ["Level 1", "Level 2", "Level 3", "Level 4","Level 5"]
-        l.setCustom(colors: [UIColor.green, UIColor.blue, UIColor.yellow,UIColor.red,UIColor.orange], labels: ["Level 1", "Level 2", "Level 3", "Level 4","Level 5"])
+        l.setCustom(colors: [UIColor.purple, UIColor.cyan, UIColor.orange,UIColor.red,UIColor.magenta], labels: ["Level 1", "Level 2", "Level 3", "Level 4","Level 5"])
         
         pieChartView.notifyDataSetChanged()
         
-        
-        
+        pieChartView.isUserInteractionEnabled = false
+        barChartView.isUserInteractionEnabled = false
     }
     
 
