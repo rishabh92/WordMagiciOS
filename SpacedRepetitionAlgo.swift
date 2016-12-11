@@ -14,8 +14,7 @@ class SpacedRepetitionAlgo {
     var words: [SRAElem]
     var next_state: [Int]
     
-    init(){
-        let sel = LevelWordSelector(level: 0)
+    init(sel: WordSelector){
         words = sel.get_words()
         next_state = [-1, 3, 7, -1, -1]
     }

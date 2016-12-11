@@ -39,7 +39,7 @@ class PraticeViewController: UIViewController {
     var learningLabel: UILabel!
     var reviewingView: UIProgressView!
     var reviewingLabel: UILabel!
-    var spacedAlgo = SpacedRepetitionAlgo();
+    var spacedAlgo: SpacedRepetitionAlgo = SpacedRepetitionAlgo(sel: AllWordSelector())
     @IBOutlet weak var WordLabel: UILabel!
     
 
@@ -47,6 +47,14 @@ class PraticeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if setForPractice != -1 {
+            spacedAlgo = SpacedRepetitionAlgo(sel: SetWordSelector(id: setForPractice))
+            setForPractice = -1
+        } else {
+            spacedAlgo = SpacedRepetitionAlgo(sel: LevelWordSelector(level: levelForPractice))
+        }
+        
         
         // Do any additional setup after loading the view.
        let rectangle = UIView(frame: CGRect(x: 10, y: 70, width: 350 , height: 90))
