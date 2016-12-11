@@ -57,29 +57,20 @@ class ChartsViewController: UIViewController {
         ]
         navigationController?.navigationBar.titleTextAttributes = attrs
         
-       // barChartView.noDataText = "You need to provide data for the chart."
         
-        var chartdatadown = ChartData(key: "down")
+        let chartdatadown = ChartData(key: "down")
         //var chartdataup = ChartData(key: "up")
+        
         chartdatadown.levelOfWordChanged(key: "down")
         
+        let wordCounts = chartdatadown.getChartDataValues(key: "down")
+        let dates = chartdatadown.getChartDataDates(key: "down")
         
-        var wordCounts = chartdatadown.getChartDataValues(key: "down")
-        var dates = chartdatadown.getChartDataDates(key: "down")
-        
-        
-        
-        
-        
-        //months = ["Set 1", "Set 2", "Set 3", "Set 4", "Set 5", "Set 6", "Set 7", "Set 8", "Set 9", "Set 10"]
-        //let unitsSold = [10.0, 5.0, 10.0, 4.0, 10.0, 8.0, 3.0, 9.0, 8.0, 10.0]
+
         
         
         setChart(dataPoints: dates, values: wordCounts)
-        
-    //    barchartview.noDataTextDescription = "GIVE REASON"
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -115,7 +106,7 @@ class ChartsViewController: UIViewController {
         xaxis.valueFormatter = formato
 
         
-        let chartDataSet = BarChartDataSet(values: dataEntries, label: "Words completed in Sets")
+        let chartDataSet = BarChartDataSet(values: dataEntries, label: "Words completed each Day")
         let chartData = BarChartData(dataSets: [chartDataSet])
         
         chartDataSet.colors = ChartColorTemplates.colorful()
@@ -124,17 +115,53 @@ class ChartsViewController: UIViewController {
         barChartView.xAxis.granularity = 1.0 //default granularity is 1.0, but it is better to be explicit
         barChartView.xAxis.decimals = 0
         barChartView.xAxis.valueFormatter = xaxis.valueFormatter
-        barChartView.animate(xAxisDuration: 4.0, yAxisDuration: 4.0, easingOption: .easeInBounce)
+        barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .easeInBounce)
         barChartView.data = chartData
         
         
-        let chartDataSetpie = PieChartDataSet(values: dataEntries, label: "Words in each set")
+        var piedataEntries: [BarChartDataEntry] = []
+        piedataEntries.append(BarChartDataEntry(x:Double(0),y:Double(wordList[0].count)))
+        piedataEntries.append(BarChartDataEntry(x:Double(1),y:Double(wordList[1].count)))
+        piedataEntries.append(BarChartDataEntry(x:Double(2),y:Double(wordList[2].count)))
+        piedataEntries.append(BarChartDataEntry(x:Double(3),y:Double(wordList[3].count)))
+        piedataEntries.append(BarChartDataEntry(x:Double(4),y:Double(wordList[4].count)))
+        piedataEntries.append(BarChartDataEntry(x:Double(5),y:Double(wordList[5].count)))
+
+
+
+        let chartDataSetpie = PieChartDataSet(values: piedataEntries, label: "Words in each set")
         let chartDatapie = PieChartData(dataSets: [chartDataSetpie])
         
-        chartDataSetpie.colors = ChartColorTemplates.colorful()
+        //chartDataSetpie.colors = ChartColorTemplates.colorful()
+        
+        var colors: [UIColor] = []
+        
+        colors.append(UIColor.purple)
+        colors.append(UIColor.blue)
+        colors.append(UIColor.orange)
+        colors.append(UIColor.red)
+        colors.append(UIColor.orange)
 
+        
+        chartDataSetpie.colors = colors
+        
+        pieChartView.animate(xAxisDuration: TimeInterval(1))
+        pieChartView.descriptionText = "Words in each level";
         pieChartView.data = chartDatapie
-
+        let l = pieChartView.legend
+        
+//        l.xEntrySpace = 7.0
+//        l.yEntrySpace = 0.0
+//        l.yOffset = 0.0
+//        
+        //legend.setCustom(entries: <#T##[LegendEntry]#>)
+        //legend.labels = ["Level 1", "Level 2", "Level 3", "Level 4","Level 5"]
+        l.setCustom(colors: [UIColor.green, UIColor.blue, UIColor.yellow,UIColor.red,UIColor.orange], labels: ["Level 1", "Level 2", "Level 3", "Level 4","Level 5"])
+        
+        pieChartView.notifyDataSetChanged()
+        
+        
+        
     }
     
 

@@ -106,7 +106,7 @@ class ChartData {
         for i in array
         {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
+            dateFormatter.dateFormat = "MM/dd"
             
             let dateString = dateFormatter.string(from: i)
             

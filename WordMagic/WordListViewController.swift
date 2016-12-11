@@ -102,7 +102,7 @@ extension WordListViewController: UITableViewDataSource {
 
         if(words.count>0){
             //cell.wordValue = ((String)word, "1")
-            cell.wordValue = (words[indexPath.row].spelling, "1")
+            cell.wordValue = (words[indexPath.row].spelling, String(words[indexPath.row].level))
             //print(words[indexPath.row].spelling!)
         }
         return cell
