@@ -75,9 +75,7 @@ class PraticeViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor(red: 85 / 255, green: 172 / 255, blue: 238 / 255, alpha: 1)
         navigationController?.navigationBar.tintColor = UIColor.white
      //   navigationController?.navigationBar.topItem?.title = "Practice"
-        let testUIBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector (nextButtonPressed))
-        self.navigationItem.rightBarButtonItem  = testUIBarButtonItem
-        
+                
         let attrs = [
             NSForegroundColorAttributeName: UIColor.white,
           //  NSFontAttributeName: UIFont(name: "Georgia-Bold", size: 24)!
@@ -183,15 +181,15 @@ class PraticeViewController: UIViewController {
             let total = spacedAlgo.get_total()
             let mastered = spacedAlgo.get_mastered()
             print(mastered)
-            progressView.progress = Float(mastered)/50.0
+            progressView.progress = Float(mastered)/Float(total)
             let progressValue = mastered
             progressLabel?.text = "Mastered \(progressValue) of \(total) words"
             let learning = spacedAlgo.get_learning()
-            learningView.progress = Float(learning)/50.0
+            learningView.progress = Float(learning)/Float(total)
             let learningValue = learning
             learningLabel?.text = "Learning \(learningValue) of \(total) words"
             let reviewing = spacedAlgo.get_reviewing()
-            reviewingView.progress = Float(reviewing)/50.0
+            reviewingView.progress = Float(reviewing)/Float(total)
             let reviewingValue = reviewing
             reviewingLabel?.text = "Reviewing \(reviewingValue) of \(total) words"
     }
@@ -211,8 +209,8 @@ class PraticeViewController: UIViewController {
         if (showingBack) {
             UIView.transition(from: back, to: front, duration: 1, options: UIViewAnimationOptions.transitionFlipFromRight, completion: nil)
             showingBack = false
-            cardView.addSubview( dynamicMeaningInsideImageView)
-            cardView.addSubview( dynamicSentencesInsideImageView)
+            cardView.addSubview(dynamicMeaningInsideImageView)
+            cardView.addSubview(dynamicSentencesInsideImageView)
             cardView.addSubview(knowThisWord)
             cardView.addSubview(dontKnowThisWord)
         } else {

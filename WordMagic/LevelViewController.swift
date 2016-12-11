@@ -103,7 +103,6 @@ extension LevelViewController: UITableViewDataSource {
         rectangle.layer.cornerRadius = 10.0
         // Add the rectangle to your cell
         cell.addSubview(rectangle)
-        
         cell.addSubview(button)
         if(names1.count>0){
             cell.textLabel!.text = names1[indexPath.row]
@@ -115,8 +114,16 @@ extension LevelViewController: UITableViewDataSource {
     func buttonClicked(sender: UIButton){
         print("ia ma cliscke")
         levelForPractice = sender.tag
-        performSegue(withIdentifier: "practiceSession1", sender: self)
-        
+        if(wordList[levelForPractice].count >= 10){
+            performSegue(withIdentifier: "practiceSession1", sender: self)
+        }else{
+            let alert = UIAlertController(title: "Words less than ten", message: "Level has less than ten words. Atleast ten words are required to access practice session", preferredStyle: UIAlertControllerStyle.alert)
+            self.present(alert, animated: true, completion: nil)
+            let dismissAction = UIAlertAction(title: "OK",
+                                             style: .default) { (action: UIAlertAction) -> Void in
+            }
+            alert.addAction(dismissAction)
+        }
     }
 }
 extension LevelViewController: UITableViewDelegate {

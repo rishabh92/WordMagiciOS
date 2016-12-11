@@ -66,14 +66,8 @@ class SetViewController: HCRootViewController {
                 let levelValue:Int = Int((words as! Word).level)
                 print(levelValue)
                 wordList[levelValue].append(words)
-                
             }
-            
         }
-
-        
-        
-        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
