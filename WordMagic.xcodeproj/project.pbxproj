@@ -34,6 +34,10 @@
 		953E54421DEBA96B00518143 /* Word+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E543E1DEBA96B00518143 /* Word+CoreDataProperties.swift */; };
 		953E54431DEBA96B00518143 /* Set+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E543F1DEBA96B00518143 /* Set+CoreDataProperties.swift */; };
 		959C03571DF346B5002EB464 /* SpacedRepetitionAlgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C03561DF346B5002EB464 /* SpacedRepetitionAlgo.swift */; };
+		95AC4AFD1DFDE919001293EA /* AllWordSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC4AFB1DFDE919001293EA /* AllWordSelector.swift */; };
+		95AC4AFE1DFDE919001293EA /* WordSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC4AFC1DFDE919001293EA /* WordSelector.swift */; };
+		95AC4B001DFDF4F8001293EA /* SetWordSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC4AFF1DFDF4F8001293EA /* SetWordSelector.swift */; };
+		95AC4B021DFDF9EE001293EA /* LevelWordSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC4B011DFDF9EE001293EA /* LevelWordSelector.swift */; };
 		AD0099D41DF3EE990001F4A0 /* SRAElem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0099D31DF3EE990001F4A0 /* SRAElem.swift */; };
 		AD5051C71DF3537600A8989D /* CharData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5051C61DF3537600A8989D /* CharData.swift */; };
 		AD91F5B71DEBCEBE0061F28B /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91F5B61DEBCEBE0061F28B /* ChartsViewController.swift */; };
@@ -71,6 +75,10 @@
 		953E543E1DEBA96B00518143 /* Word+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Word+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		953E543F1DEBA96B00518143 /* Set+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Set+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		959C03561DF346B5002EB464 /* SpacedRepetitionAlgo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacedRepetitionAlgo.swift; sourceTree = "<group>"; };
+		95AC4AFB1DFDE919001293EA /* AllWordSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllWordSelector.swift; sourceTree = "<group>"; };
+		95AC4AFC1DFDE919001293EA /* WordSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordSelector.swift; sourceTree = "<group>"; };
+		95AC4AFF1DFDF4F8001293EA /* SetWordSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetWordSelector.swift; sourceTree = "<group>"; };
+		95AC4B011DFDF9EE001293EA /* LevelWordSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelWordSelector.swift; sourceTree = "<group>"; };
 		AD0099D31DF3EE990001F4A0 /* SRAElem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRAElem.swift; sourceTree = "<group>"; };
 		AD5051C61DF3537600A8989D /* CharData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharData.swift; sourceTree = "<group>"; };
 		AD91F5B61DEBCEBE0061F28B /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
@@ -173,8 +181,12 @@
 		959C03551DF34673002EB464 /* SRAlgo */ = {
 			isa = PBXGroup;
 			children = (
+				95AC4AFB1DFDE919001293EA /* AllWordSelector.swift */,
+				95AC4AFF1DFDF4F8001293EA /* SetWordSelector.swift */,
+				95AC4AFC1DFDE919001293EA /* WordSelector.swift */,
 				AD0099D31DF3EE990001F4A0 /* SRAElem.swift */,
 				959C03561DF346B5002EB464 /* SpacedRepetitionAlgo.swift */,
+				95AC4B011DFDF9EE001293EA /* LevelWordSelector.swift */,
 			);
 			name = SRAlgo;
 			sourceTree = "<group>";
@@ -317,12 +329,15 @@
 				18EEA50B1DD38FDF0022099C /* HomeTableViewCell.swift in Sources */,
 				AD0099D41DF3EE990001F4A0 /* SRAElem.swift in Sources */,
 				953E54401DEBA96B00518143 /* Sentence+CoreDataClass.swift in Sources */,
+				95AC4AFD1DFDE919001293EA /* AllWordSelector.swift in Sources */,
 				953E54431DEBA96B00518143 /* Set+CoreDataProperties.swift in Sources */,
 				18EEA4F91DD0FEC20022099C /* WordMagic.xcdatamodeld in Sources */,
 				18EEA50E1DD393D10022099C /* NextHeaderView.swift in Sources */,
 				959C03571DF346B5002EB464 /* SpacedRepetitionAlgo.swift in Sources */,
+				95AC4AFE1DFDE919001293EA /* WordSelector.swift in Sources */,
 				181CB1591DE38D790002D4E1 /* LevelViewController.swift in Sources */,
 				953E54421DEBA96B00518143 /* Word+CoreDataProperties.swift in Sources */,
+				95AC4B021DFDF9EE001293EA /* LevelWordSelector.swift in Sources */,
 				AD5051C71DF3537600A8989D /* CharData.swift in Sources */,
 				18EEA5061DD101210022099C /* SetViewController.swift in Sources */,
 				18EEA51A1DDA5EFE0022099C /* Set+CoreDataClass.swift in Sources */,
@@ -334,6 +349,7 @@
 				18EEA5101DD394100022099C /* WordViewController.swift in Sources */,
 				AD91F5B71DEBCEBE0061F28B /* ChartsViewController.swift in Sources */,
 				18EEA5141DD3F1720022099C /* FlashCardViewCell.swift in Sources */,
+				95AC4B001DFDF4F8001293EA /* SetWordSelector.swift in Sources */,
 				181CB1601DE3C8CB0002D4E1 /* SetTableViewCell.swift in Sources */,
 				18EEA4F11DD0FEC20022099C /* AppDelegate.swift in Sources */,
 				953E54411DEBA96B00518143 /* Sentence+CoreDataProperties.swift in Sources */,

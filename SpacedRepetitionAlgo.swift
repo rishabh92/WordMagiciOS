@@ -14,17 +14,8 @@ class SpacedRepetitionAlgo {
     var words: [SRAElem]
     var next_state: [Int]
     
-    init(){
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let setsFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Word")
-        do {
-            var words = try context.fetch(setsFetch) as! [Word]
-            words = words.sorted{ _,_ in arc4random() % 2 == 0 }
-            self.words = Array(words.prefix(50)).map{ SRAElem(word: $0) }
-        } catch {
-            fatalError("Failed to fetch : \(error)")
-        }
+    init(sel: WordSelector){
+        words = sel.get_words()
         next_state = [-1, 3, 7, -1, -1]
     }
     

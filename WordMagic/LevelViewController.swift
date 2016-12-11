@@ -10,6 +10,7 @@ import UIKit
 import HoverConversion
 import CoreData
 
+var levelForPractice = -1
 
 class LevelViewController: HCRootViewController {
      var nameValue = "";
@@ -111,8 +112,9 @@ extension LevelViewController: UITableViewDataSource {
         return cell
         
     }
-    func buttonClicked(){
+    func buttonClicked(sender: UIButton){
         print("ia ma cliscke")
+        levelForPractice = sender.tag
         performSegue(withIdentifier: "practiceSession1", sender: self)
         
     }

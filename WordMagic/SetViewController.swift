@@ -12,6 +12,7 @@ import HoverConversion
 import CoreData
 var names = [Set]()
 var wordList = [[]]
+var setForPractice = -1
 
 class SetViewController: HCRootViewController {
     var nameValue = "";
@@ -203,6 +204,11 @@ class SetViewController: HCRootViewController {
             }
         }
         
+        if (segue.identifier == "practiceSession") {
+            let controller:PraticeViewController = segue.destination as! PraticeViewController
+            controller.spacedAlgo = SpacedRepetitionAlgo(sel: AllWordSelector())
+        }
+        
 
         
     }
@@ -282,8 +288,9 @@ extension SetViewController: UITableViewDataSource {
         return cell
         
     }
-    func buttonClicked(){
+    func buttonClicked(sender: UIButton){
      print("ia ma cliscke")
+    setForPractice = sender.tag + 1
      performSegue(withIdentifier: "practiceSession", sender: self)
 
     }
