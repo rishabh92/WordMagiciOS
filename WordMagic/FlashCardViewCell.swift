@@ -23,7 +23,7 @@ class FlashCardViewCell: UITableViewCell {
     @IBAction func levelButtonPressed(_ sender: UIButton) {
         print("Click Happende")
         if sender.titleLabel?.text == "1" {
-            print("here")
+            
             
         } else if sender.titleLabel?.text == "2" {
             print("there 1")

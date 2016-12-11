@@ -12,10 +12,14 @@ import CoreData
 
 class LevelViewController: HCRootViewController {
      var nameValue = "";
-var names = ["Level 1", "Level 2", "Level 3", "Level 4", "Level 5"]
+    var names1 = ["Level 0","Level 1", "Level 2", "Level 3", "Level 4", "Level 5"]
+    var wordList = [[]]
+    var selected: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-
+      //  var setViewController: SetViewController = SetViewController(nibName: nil, bundle: nil)
+      //  var setNames = setViewController.names
+        
         // Do any additional setup after loading the view.
         navigationView.backgroundColor = UIColor(red: 85 / 255, green: 172 / 255, blue: 238 / 255, alpha: 1)
         navigationView.titleLabel.textColor = .white
@@ -26,12 +30,21 @@ var names = ["Level 1", "Level 2", "Level 3", "Level 4", "Level 5"]
  //       tableView.register(UITableViewCell.self,forCellReuseIdentifier: "setName")
         self.tableView.separatorColor = UIColor(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 1)
         title = "Levels"
-       /* self.deleteIncidents()
-        
-        for i in 1 ..< 11 {
-            let str = "Set \(i)"
-            self.saveSet(name: str)
-        }*/
+        for set in names{
+            print("VALUE")
+            print(set.name)
+            for words in set.words!{
+                print((words as! Word).spelling)
+                print((words as! Word).level)
+                let levelValue:Int = Int((words as! Word).level)
+                print(levelValue)
+                wordList[0].append(words)
+                
+            }
+            
+        }
+        print("WRD LIST 0  COUT")
+        print(wordList[0].count)
         self.tableView.reloadData()
     }
 
@@ -47,6 +60,14 @@ var names = ["Level 1", "Level 2", "Level 3", "Level 4", "Level 5"]
             let todetail:LevelWordViewController = segue.destination as! LevelWordViewController
             
             todetail.name = nameValue
+            todetail.words = []
+            if(selected<wordList.endIndex){
+                for w in wordList[selected] {
+                    todetail.words.append(w as! Word)
+                }
+            }
+            print(selected)
+            print(wordList[0].count)
         }
         
         
@@ -67,11 +88,11 @@ var names = ["Level 1", "Level 2", "Level 3", "Level 4", "Level 5"]
 extension LevelViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return names.count
+        return names1.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let setName = names[(indexPath as NSIndexPath).row]
+        let setName = names1[(indexPath as NSIndexPath).row]
         print(setName)
         //   let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "setName") as! UITableViewCell
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell")! as UITableViewCell;
@@ -95,8 +116,8 @@ extension LevelViewController: UITableViewDataSource {
         cell.addSubview(rectangle)
         
         cell.addSubview(button)
-        if(names.count>0){
-            cell.textLabel!.text = names[indexPath.row]
+        if(names1.count>0){
+            cell.textLabel!.text = names1[indexPath.row]
         }
         
         return cell
@@ -119,9 +140,11 @@ extension LevelViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Did Select Called")
+        tableView.deselectRow(at: indexPath, animated: false)
         let cell = tableView.cellForRow(at: indexPath)
         nameValue = cell!.textLabel!.text!
-       // print("tect" , nameValue)
+        print("tect" , nameValue)
+        selected = indexPath.row
         performSegue(withIdentifier: "levelWordList", sender: self)
         
     }

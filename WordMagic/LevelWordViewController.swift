@@ -112,7 +112,7 @@ extension LevelWordViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as! HomeTableViewCell
         if(words.count>0){
             //cell.wordValue = ((String)word, "1")
-            cell.wordValue = (words[indexPath.row].spelling, "1")
+            cell.wordValue = (words[indexPath.row].spelling, String(words[indexPath.row].level))
         }
         return cell
     }
