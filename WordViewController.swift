@@ -101,7 +101,7 @@ extension WordViewController: UITableViewDataSource {
         cell.addSubview(rectangle)
         rectangle.isUserInteractionEnabled = false
         cell.selectionStyle = UITableViewCellSelectionStyle.none
-
+        
         return cell
     }
 }

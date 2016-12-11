@@ -10,12 +10,13 @@
 import UIKit
 import HoverConversion
 import CoreData
-
+var names = [Set]()
 class SetViewController: HCRootViewController {
     var nameValue = "";
-    var names = [Set]()
+    
     var word = ["abs","abcd"]
     var selected: Int = 0
+  
     
     @IBOutlet weak var setViewTable: UITableView!
     
@@ -206,7 +207,7 @@ class SetViewController: HCRootViewController {
         print("abc: start")
         let setsFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Set")
         do {
-            self.names = try context.fetch(setsFetch) as! [Set]
+            names = try context.fetch(setsFetch) as! [Set]
             print("abc: end")
             self.tableView.reloadData()
             print("abc: end2")
