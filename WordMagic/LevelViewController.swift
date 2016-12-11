@@ -10,10 +10,11 @@ import UIKit
 import HoverConversion
 import CoreData
 
+
 class LevelViewController: HCRootViewController {
      var nameValue = "";
     var names1 = ["Level 0","Level 1", "Level 2", "Level 3", "Level 4", "Level 5"]
-    var wordList = [[]]
+    
     var selected: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,20 +31,7 @@ class LevelViewController: HCRootViewController {
  //       tableView.register(UITableViewCell.self,forCellReuseIdentifier: "setName")
         self.tableView.separatorColor = UIColor(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 1)
         title = "Levels"
-        for set in names{
-            print("VALUE")
-            print(set.name)
-            for words in set.words!{
-                print((words as! Word).spelling)
-                print((words as! Word).level)
-                let levelValue:Int = Int((words as! Word).level)
-                print(levelValue)
-                wordList[0].append(words)
-                
-            }
-            
-        }
-        print("WRD LIST 0  COUT")
+                print("WRD LIST 0  COUT")
         print(wordList[0].count)
         self.tableView.reloadData()
     }

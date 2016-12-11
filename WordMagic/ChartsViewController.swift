@@ -119,7 +119,17 @@ class ChartsViewController: UIViewController {
         barChartView.data = chartData
         
         
-        let chartDataSetpie = PieChartDataSet(values: dataEntries, label: "Words in each set")
+        var piedataEntries: [BarChartDataEntry] = []
+        piedataEntries.append(BarChartDataEntry(x:Double(0),y:Double(wordList[0].count)))
+        piedataEntries.append(BarChartDataEntry(x:Double(1),y:Double(wordList[1].count)))
+        piedataEntries.append(BarChartDataEntry(x:Double(2),y:Double(wordList[2].count)))
+        piedataEntries.append(BarChartDataEntry(x:Double(3),y:Double(wordList[3].count)))
+        piedataEntries.append(BarChartDataEntry(x:Double(4),y:Double(wordList[4].count)))
+        piedataEntries.append(BarChartDataEntry(x:Double(5),y:Double(wordList[5].count)))
+
+
+
+        let chartDataSetpie = PieChartDataSet(values: piedataEntries, label: "Words in each set")
         let chartDatapie = PieChartData(dataSets: [chartDataSetpie])
         
         //chartDataSetpie.colors = ChartColorTemplates.colorful()
