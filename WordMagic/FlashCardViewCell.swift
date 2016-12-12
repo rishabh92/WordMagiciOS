@@ -10,31 +10,34 @@
 
 import UIKit
 
-
+import CoreData
 class FlashCardViewCell: UITableViewCell {
     static let Height: CGFloat = 600
+    var wordName:Word? = nil
     
+    @IBOutlet weak var buttonZero: UIButton!
+    @IBOutlet weak var buttonOne: UIButton!
     
+    @IBOutlet weak var buttonTwo: UIButton!
 
+    @IBOutlet weak var buttonThree: UIButton!
+    
+    @IBOutlet weak var buttonFour: UIButton!
+    
+    @IBOutlet weak var buttonFive: UIButton!
+     var setControl = SetViewController()
+    var wordListControl = WordListViewController()
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var meaningLabel: UILabel!
     @IBOutlet weak var sentenceLabel1: UILabel!
-
+   
     @IBAction func levelButtonPressed(_ sender: UIButton) {
-        print("Click Happende")
-        if sender.titleLabel?.text == "1" {
-            
-            
-        } else if sender.titleLabel?.text == "2" {
-            print("there 1")
-        }else if sender.titleLabel?.text == "3" {
-            print("there2")
-        }else if sender.titleLabel?.text == "4" {
-            print("there 3")
-        }
-        else if sender.titleLabel?.text == "5" {
-            print("there 4")
-        }
+        print("Click Happened")
+        changePriorButton()
+        sender.backgroundColor = UIColor.brown
+        sender.isEnabled = false
+        setLevel(level: Int((sender.titleLabel?.text)!)!)
+        
     }
     
     var flashCardValue: (String, String, String)? {
@@ -54,6 +57,43 @@ class FlashCardViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
+    }
+    func setLevel(level: Int){
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        wordName?.level = Int16(level)
+        try! context.save()
+        print(wordName?.spelling)
+        print(wordName?.level)
+        setControl.reloadData()
+        
+        }
+    func changePriorButton(){
+            buttonOne.backgroundColor = UIColor.gray
+        
+            buttonOne.isEnabled = true;
+        
+            buttonTwo.backgroundColor = UIColor.gray
+           //buttonTwo.isHighlighted = false;
+            buttonTwo.isEnabled = true;
+       
+            buttonThree.backgroundColor = UIColor.gray
+           // buttonThree.isHighlighted = false;
+            buttonThree.isEnabled = true;
+       
+            buttonFour.backgroundColor = UIColor.gray
+           // buttonFour.isHighlighted = false;
+            buttonFour.isEnabled = true;
+       
+            buttonFive.backgroundColor = UIColor.gray
+          //  buttonFive.isHighlighted = false;
+            buttonFive.isEnabled = true;
+        
+            buttonZero.backgroundColor = UIColor.gray
+          //  buttonZero.isHighlighted = false
+            buttonZero.isEnabled = false
+        
     }
 }
 

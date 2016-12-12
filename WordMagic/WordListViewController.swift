@@ -26,13 +26,16 @@ class WordListViewController: HCRootViewController {
         title = name
        //self.deleteIncidents()
         self.tableView.reloadData()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+       self.tableView.reloadData()
+    }
 
     fileprivate func showPagingViewContoller(indexPath: IndexPath) {
         let vc = HCPagingViewController(indexPath: indexPath)

@@ -53,22 +53,7 @@ class SetViewController: HCRootViewController {
             self.reloadData()
         }
         
-        for i in 0...5{
-            wordList.append([])
-        }
-        
-        for set in names{
-            print("VALUE")
-            print(set.name)
-            for words in set.words!{
-                print((words as! Word).spelling)
-                print((words as! Word).level)
-                let levelValue:Int = Int((words as! Word).level)
-                print(levelValue)
-                wordList[levelValue].append(words)
-            }
-        }
-    }
+   }
     
     override func viewWillAppear(_ animated: Bool) {
         reloadData()
@@ -244,8 +229,24 @@ class SetViewController: HCRootViewController {
             self.tableView.reloadData()
             print("abc: end2")
         } catch {
-            fatalError("Failed to fetch employees: \(error)")
+            fatalError("Failed to fetch \(error)")
         }
+        wordList = [[]]
+        for i in 0...5{
+            wordList.append([])
+        }
+        for set in names{
+            //  print("VALUE")
+            //print(set.name)
+            for words in set.words!{
+                //   print((words as! Word).spelling)
+                //  print((words as! Word).level)
+                let levelValue:Int = Int((words as! Word).level)
+                print(levelValue)
+                wordList[levelValue].append(words)
+            }
+        }
+
     }
     
 }

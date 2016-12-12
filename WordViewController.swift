@@ -8,9 +8,11 @@
 
 import UIKit
 import HoverConversion
+import CoreData
+import Foundation
 
 class WordViewController: HCContentViewController {
-    var word: Word? = nil
+    var word: Word?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,7 +34,12 @@ class WordViewController: HCContentViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         tableView.register(UINib(nibName: "FlashCardViewCell", bundle: nil), forCellReuseIdentifier: "FlashCardViewCell")
         tableView.dataSource = self
+        print("HDSJADSJD")
+        print(word?.spelling)
       
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -44,17 +51,6 @@ class WordViewController: HCContentViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension WordViewController {
@@ -76,17 +72,14 @@ extension WordViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      //  print("HERE-------------------------");
+    
         let cell = tableView.dequeueReusableCell(withIdentifier: "FlashCardViewCell") as! FlashCardViewCell
-   //     print("HERE-------------------------");
         let rectangle = UIView(frame: CGRect(x: 5, y: 10, width: cell.frame.size.width - 10, height: 500))
         
         rectangle.layer.borderColor = UIColor.darkGray.cgColor
         rectangle.layer.borderWidth = 2.0
         rectangle.layer.cornerRadius = 10.0
-        //rectangle.layer.backgroundColor = UIColor(red: 0 / 255, green: 0 / 255, blue: 255 / 0, alpha: 1).cgColor
-        // Add the rectangle to your cell
-        
+   
         var sentences = String()
         
         for sentence in (word?.sentences)! {
@@ -101,6 +94,35 @@ extension WordViewController: UITableViewDataSource {
         cell.addSubview(rectangle)
         rectangle.isUserInteractionEnabled = false
         cell.selectionStyle = UITableViewCellSelectionStyle.none
+        cell.wordName = word!
+        let level = Int((word?.level)!)
+        switch(level){
+        case 1:
+            cell.buttonOne.backgroundColor = UIColor.brown;
+           
+            cell.buttonOne.isEnabled = false;
+            break;
+        case 2:
+            cell.buttonTwo.backgroundColor = UIColor.brown;
+            cell.buttonTwo.isEnabled = false;
+            break;
+        case 3:
+            cell.buttonThree.backgroundColor = UIColor.brown;
+            cell.buttonThree.isEnabled = false;
+            break;
+        case 4:
+            cell.buttonFour.backgroundColor = UIColor.brown;
+            cell.buttonFour.isEnabled = false;
+            break;
+        case 5:
+            cell.buttonFive.backgroundColor = UIColor.brown;
+            cell.buttonFive.isEnabled = false;
+            break;
+        default:
+            cell.buttonZero.backgroundColor = UIColor.brown;
+            cell.buttonZero.isEnabled = false;
+            break
+        }
         
         return cell
     }
