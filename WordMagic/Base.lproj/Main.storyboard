@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="28" width="359" height="142"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x3P-Ui-v6A" id="eqE-gd-0A0">
-                                            <rect key="frame" x="0.0" y="0.0" width="359" height="141.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="141"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -70,7 +70,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="117"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y3o-dT-iNv" id="tlc-fp-Zma">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="116.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -215,7 +215,7 @@
             </objects>
             <point key="canvasLocation" x="1956" y="-826.23688155922048"/>
         </scene>
-        <!--View Controller-->
+        <!--Tutorial-->
         <scene sceneID="XD6-3B-xbP">
             <objects>
                 <viewController id="2xR-LB-UB7" customClass="ViewController" customModule="WordMagic" customModuleProvider="target" sceneMemberID="viewController">
@@ -227,15 +227,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tutorial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8o-ok-EJe">
-                                <rect key="frame" x="159" y="72" width="57" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wxq-ic-fnH">
-                                <rect key="frame" x="16" y="98" width="343" height="512"/>
+                                <rect key="frame" x="16" y="72" width="343" height="538"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -244,7 +237,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="znX-oX-Lrg"/>
+                    <navigationItem key="navigationItem" title="Tutorial" id="znX-oX-Lrg"/>
                     <connections>
                         <outlet property="tutorialLabel" destination="Wxq-ic-fnH" id="BoE-2V-nUM"/>
                     </connections>
@@ -257,7 +250,7 @@
         <scene sceneID="ZYA-dm-a3L">
             <objects>
                 <navigationController title="Search" automaticallyAdjustsScrollViewInsets="NO" id="zKi-Tt-wf8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" systemItem="search" id="LI4-2z-CXj"/>
+                    <tabBarItem key="tabBarItem" title="Tutorial" image="sun" selectedImage="sun" id="LI4-2z-CXj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RFK-6M-kXV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -469,6 +462,7 @@
         <image name="man" width="30" height="30"/>
         <image name="pie-chart" width="30" height="30"/>
         <image name="storage" width="30" height="30"/>
+        <image name="sun" width="30" height="30"/>
         <image name="uptrend" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>

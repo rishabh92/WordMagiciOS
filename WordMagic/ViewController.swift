@@ -18,6 +18,19 @@ class ViewController: UIViewController {
     var showingBack = true
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        navigationController?.isNavigationBarHidden = false
+        
+        navigationController?.navigationBar.barTintColor = UIColor(red: 85 / 255, green: 172 / 255, blue: 238 / 255, alpha: 1)
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.title = "Tutorial"
+        let attrs = [
+            NSForegroundColorAttributeName: UIColor.white,
+            //  NSFontAttributeName: UIFont(name: "Georgia-Bold", size: 24)!
+        ]
+        navigationController?.navigationBar.titleTextAttributes = attrs
+        
         // Do any additional setup after loading the view, typically from a nib.
      /*   front = UIImageView(image: UIImage(named: "image1.jpg"))
         back = UIImageView(image: UIImage(named: "back.jpg"))
