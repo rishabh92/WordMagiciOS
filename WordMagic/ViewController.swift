@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var HelpLabel: UILabel!
     
+    @IBOutlet weak var tutorialLabel: UILabel!
     var cardView: UIView!
     var back: UIImageView!
     var front: UIImageView!
@@ -34,6 +35,10 @@ class ViewController: UIViewController {
         cardView.isUserInteractionEnabled = true
         view.addSubview(cardView)*/
       
+        
+        tutorialLabel.text = "This is a word learning app. \n Words are contained in Sets, sets are random group of words. Words are fetched from server which we have build from scratch and stored in Core Data inside app. \n\nUSAGE \n To go back from a screen to previous screen just Swipe Right. In the word meaning Screen where you seen words, meaning and sentences, you can swipe up and down to see the next and previous word respectively. Change word level by clicking on the level bar.\n\n Sync with Server: To fetch new words from the server, go to the Profile section and press the sync now button. \n\n Report: The report shows the activities of the user. The top graph shows number of words that progressed from higher levels to lower levels and the lower graph shows level distribution of the words."
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
