@@ -34,41 +34,10 @@ class FlashCardViewCell: UITableViewCell {
     @IBAction func levelButtonPressed(_ sender: UIButton) {
         print("Click Happened")
         changePriorButton()
-        sender.isHighlighted = true
+        sender.backgroundColor = UIColor.brown
+        sender.isEnabled = false
+        setLevel(level: Int((sender.titleLabel?.text)!)!)
         
-        if sender.titleLabel?.text == "1" {
-            print("HERE")
-            buttonOne.isHighlighted = true;
-            buttonOne.isEnabled = false;
-            setLevel(level: 1)
-            
-            
-        } else if sender.titleLabel?.text == "2" {
-            print("HERE 4jheioheo")
-            buttonTwo.isHighlighted = true;
-            buttonTwo.isEnabled = false;
-             setLevel(level: 2)
-           
-        }else if sender.titleLabel?.text == "3" {
-            buttonThree.isHighlighted = true;
-            buttonThree.isEnabled = false;
-            setLevel(level: 3)
-            print("there2")
-         
-        }else if sender.titleLabel?.text == "4" {
-            buttonFour.isHighlighted = true;
-            buttonFour.isEnabled = false;
-            setLevel(level: 4)
-            print("there 3")
-           
-        }
-        else if sender.titleLabel?.text == "5" {
-            buttonFive.isHighlighted = true;
-            buttonFive.isEnabled = false;
-            setLevel(level: 5)
-            print("there 4")
-            
-        }
     }
     
     var flashCardValue: (String, String, String)? {
@@ -97,35 +66,34 @@ class FlashCardViewCell: UITableViewCell {
         try! context.save()
         print(wordName?.spelling)
         print(wordName?.level)
-        setControl.viewDidLoad()
+        setControl.reloadData()
         
         }
     func changePriorButton(){
-        let priorlevel:String = String(describing: wordName!.level)
-        print(priorlevel)
-       
-        print("YEH")
-        if priorlevel == Optional("1") {
-            buttonOne.isHighlighted = false;
+            buttonOne.backgroundColor = UIColor.gray
+        
             buttonOne.isEnabled = true;
-            
-        } else if priorlevel == Optional("2") {
-            buttonTwo.isHighlighted = false;
+        
+            buttonTwo.backgroundColor = UIColor.gray
+           //buttonTwo.isHighlighted = false;
             buttonTwo.isEnabled = true;
-        }else if priorlevel == Optional("3") {
-            buttonThree.isHighlighted = false;
+       
+            buttonThree.backgroundColor = UIColor.gray
+           // buttonThree.isHighlighted = false;
             buttonThree.isEnabled = true;
-        }else if priorlevel == Optional("4") {
-            buttonFour.isHighlighted = false;
+       
+            buttonFour.backgroundColor = UIColor.gray
+           // buttonFour.isHighlighted = false;
             buttonFour.isEnabled = true;
-        }
-        else if priorlevel == Optional("5") {
-            buttonFive.isHighlighted = false;
+       
+            buttonFive.backgroundColor = UIColor.gray
+          //  buttonFive.isHighlighted = false;
             buttonFive.isEnabled = true;
-        }else{
-            buttonZero.isHighlighted = false
+        
+            buttonZero.backgroundColor = UIColor.gray
+          //  buttonZero.isHighlighted = false
             buttonZero.isEnabled = false
-        }
+        
     }
 }
 

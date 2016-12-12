@@ -42,6 +42,9 @@ class LevelWordViewController: HCRootViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
 
     /*
     // MARK: - Navigation

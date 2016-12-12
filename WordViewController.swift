@@ -38,6 +38,9 @@ class WordViewController: HCContentViewController {
         print(word?.spelling)
       
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -95,27 +98,28 @@ extension WordViewController: UITableViewDataSource {
         let level = Int((word?.level)!)
         switch(level){
         case 1:
-            cell.buttonOne.isHighlighted = true;
+            cell.buttonOne.backgroundColor = UIColor.brown;
+           
             cell.buttonOne.isEnabled = false;
             break;
         case 2:
-            cell.buttonTwo.isHighlighted = true;
+            cell.buttonTwo.backgroundColor = UIColor.brown;
             cell.buttonTwo.isEnabled = false;
             break;
         case 3:
-            cell.buttonThree.isHighlighted = true;
+            cell.buttonThree.backgroundColor = UIColor.brown;
             cell.buttonThree.isEnabled = false;
             break;
         case 4:
-            cell.buttonFour.isHighlighted = true;
+            cell.buttonFour.backgroundColor = UIColor.brown;
             cell.buttonFour.isEnabled = false;
             break;
         case 5:
-            cell.buttonFive.isHighlighted = true;
+            cell.buttonFive.backgroundColor = UIColor.brown;
             cell.buttonFive.isEnabled = false;
             break;
         default:
-            cell.buttonZero.isHighlighted = true;
+            cell.buttonZero.backgroundColor = UIColor.brown;
             cell.buttonZero.isEnabled = false;
             break
         }
