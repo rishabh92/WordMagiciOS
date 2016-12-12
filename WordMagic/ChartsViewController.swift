@@ -130,10 +130,10 @@ class ChartsViewController: UIViewController {
         //chartDataSetpie.colors = ChartColorTemplates.colorful()
         
         var colors: [UIColor] = []
-        colors.append(UIColor.green)
+        colors.append(UIColor.gray)
         colors.append(UIColor.purple)
-        colors.append(UIColor.cyan)
-        colors.append(UIColor.orange)
+        colors.append(UIColor.brown)
+        colors.append(UIColor.blue)
         colors.append(UIColor.red)
         colors.append(UIColor.magenta)
 
@@ -151,7 +151,7 @@ class ChartsViewController: UIViewController {
 //        
         //legend.setCustom(entries: <#T##[LegendEntry]#>)
         //legend.labels = ["Level 1", "Level 2", "Level 3", "Level 4","Level 5"]
-        l.setCustom(colors: [UIColor.green, UIColor.purple, UIColor.cyan, UIColor.orange,UIColor.red,UIColor.magenta], labels: ["Not categorized","Level 1", "Level 2", "Level 3", "Level 4","Level 5"])
+        l.setCustom(colors: [UIColor.gray, UIColor.purple, UIColor.brown, UIColor.blue,UIColor.red,UIColor.magenta], labels: ["Not categorized","Level 1", "Level 2", "Level 3", "Level 4","Level 5"])
         
         pieChartView.notifyDataSetChanged()
         

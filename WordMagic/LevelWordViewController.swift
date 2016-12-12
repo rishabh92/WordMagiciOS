@@ -28,6 +28,7 @@ class LevelWordViewController: HCRootViewController {
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeTableViewCell")
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, 50, 0)
         title = name
         // self.deleteIncidents()
         //for i in 0 ..< wordList.count {
