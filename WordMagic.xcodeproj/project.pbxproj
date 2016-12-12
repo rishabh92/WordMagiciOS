@@ -237,7 +237,7 @@
 				TargetAttributes = {
 					18EEA4EC1DD0FEC20022099C = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = PZR5SBF49F;
+						DevelopmentTeam = 625732G463;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -481,7 +481,7 @@
 			baseConfigurationReference = F5A689B26B00468630940F8B /* Pods-WordMagic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = PZR5SBF49F;
+				DEVELOPMENT_TEAM = 625732G463;
 				INFOPLIST_FILE = WordMagic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rishabh92.WordMagic;
@@ -495,7 +495,7 @@
 			baseConfigurationReference = E28F7B17C0EB9F58F376BE8E /* Pods-WordMagic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = PZR5SBF49F;
+				DEVELOPMENT_TEAM = 625732G463;
 				INFOPLIST_FILE = WordMagic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rishabh92.WordMagic;

@@ -59,10 +59,6 @@ class ChartsViewController: UIViewController {
         
         let wordCounts = chartdatadown.getChartDataValues(key: "down")
         let dates = chartdatadown.getChartDataDates(key: "down")
-        
-
-        
-        
         setChart(dataPoints: dates, values: wordCounts)
 
     }
