@@ -70,6 +70,10 @@ class SetViewController: HCRootViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        reloadData()
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -103,14 +107,18 @@ class SetViewController: HCRootViewController {
             if error != nil {
                 
                 //print("F apple: " + error!.localizedDescription)
-                alertController.dismiss(animated: true, completion: nil)
+                alertController.dismiss(animated: true, completion: {
+                    let alertController = UIAlertController(title: "Error: Cannot connect to internet", message: "This app needs internet connection to load words on the first run.", preferredStyle: UIAlertControllerStyle.alert)
+                    let cancelAction = UIAlertAction(title: "Okay", style: .default) { (action: UIAlertAction) -> Void in
+                    }
+                    alertController.addAction(cancelAction)
+                    self.present(alertController, animated: true, completion: nil)
+                })
+                
+                UserDefaults.standard.removeObject(forKey: "isAppAlreadyLaunchedOnce")
                 
                 
-                let alertController = UIAlertController(title: "Error: Cannot connect to internet", message: "This app needs internet connection to load words on the first run.", preferredStyle: UIAlertControllerStyle.alert)
-                let cancelAction = UIAlertAction(title: "Okay", style: .default) { (action: UIAlertAction) -> Void in
-                }
-                alertController.addAction(cancelAction)
-                self.present(alertController, animated: true, completion: nil)
+
 
                 
             } else {
@@ -124,8 +132,9 @@ class SetViewController: HCRootViewController {
                             for set in sets {
                                 self.saveSet(name: set["name"] as! String, words: set["words"] as! [[String: Any]])
                             }
-                            self.reloadData()
-                            alertController.dismiss(animated: true, completion: nil)
+                            alertController.dismiss(animated: true, completion: {
+                                self.reloadData()
+                            })
                         }
                         //Implement your logic
                         //print(json)
