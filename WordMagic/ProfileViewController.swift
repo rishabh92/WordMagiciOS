@@ -50,15 +50,21 @@ class ProfileViewController: UIViewController {
                     {
                         //print(json)
                         if let sets = json["sets"] as? [[String: Any]] {
+                            var new_sets = 0
                             for set in sets {
                                 let set_id: Int = Int(set["id"] as! String)!
-                                print("set_id \(set_id)")
-                                print("names.count \(names.count)")
                                 if set_id > names.count {
                                     self.saveSet(name: set["name"] as! String, words: set["words"] as! [[String: Any]])
+                                    new_sets += 1
                                 }
                             }
-                            alertController.dismiss(animated: true, completion: nil)
+                            alertController.dismiss(animated: true, completion: {
+                                let alertController = UIAlertController(title: "Sync Complete", message: "\(new_sets) new set(s) added.", preferredStyle: UIAlertControllerStyle.alert)
+                                let cancelAction = UIAlertAction(title: "Okay", style: .default) { (action: UIAlertAction) -> Void in
+                                }
+                                alertController.addAction(cancelAction)
+                                self.present(alertController, animated: true, completion: nil)
+                            })
                         }
                         //Implement your logic
                         //print(json)
