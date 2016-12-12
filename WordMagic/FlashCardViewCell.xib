@@ -34,16 +34,8 @@
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vK3-HQ-hQD">
-                        <frame key="frameInset" minX="80" minY="133" width="30" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <state key="normal" title="0">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                    </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojO-Mc-bb7">
-                        <frame key="frameInset" minX="118" minY="134" width="30" height="30"/>
+                        <frame key="frameInset" minX="98" minY="134" width="30" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <state key="normal" title="1">
@@ -54,7 +46,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6d-Pi-Lhx">
-                        <frame key="frameInset" minX="156" minY="134" width="30" height="30"/>
+                        <frame key="frameInset" minX="136" minY="134" width="30" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <state key="normal" title="2">
@@ -65,7 +57,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eZ-ru-cKc">
-                        <frame key="frameInset" minX="193" minY="134" width="30" height="30"/>
+                        <frame key="frameInset" minX="173" minY="134" width="30" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <state key="normal" title="3">
@@ -76,7 +68,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivv-Tr-fZd">
-                        <frame key="frameInset" minX="228" minY="134" width="30" height="30"/>
+                        <frame key="frameInset" minX="208" minY="134" width="30" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <state key="normal" title="4">
@@ -87,7 +79,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAd-aa-Us8">
-                        <frame key="frameInset" minX="266" minY="134" width="30" height="30"/>
+                        <frame key="frameInset" minX="246" minY="134" width="30" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <state key="normal" title="5">
@@ -106,7 +98,6 @@
                 <outlet property="buttonOne" destination="ojO-Mc-bb7" id="EiZ-Ga-F4P"/>
                 <outlet property="buttonThree" destination="7eZ-ru-cKc" id="ztm-l4-beu"/>
                 <outlet property="buttonTwo" destination="y6d-Pi-Lhx" id="UnE-4P-m4m"/>
-                <outlet property="buttonZero" destination="vK3-HQ-hQD" id="K3G-9Q-Tg1"/>
                 <outlet property="meaningLabel" destination="Y0J-vk-2W9" id="VRL-Ut-4BK"/>
                 <outlet property="sentenceLabel1" destination="fxf-uJ-vsA" id="4Q0-JD-aZw"/>
                 <outlet property="wordLabel" destination="wn4-T8-zx1" id="opE-Oa-Wdf"/>

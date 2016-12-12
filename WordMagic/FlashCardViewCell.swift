@@ -14,8 +14,8 @@ import CoreData
 class FlashCardViewCell: UITableViewCell {
     static let Height: CGFloat = 600
     var wordName:Word? = nil
-    
-    @IBOutlet weak var buttonZero: UIButton!
+    var chartdata = ChartData(key: "down")
+
     @IBOutlet weak var buttonOne: UIButton!
     
     @IBOutlet weak var buttonTwo: UIButton!
@@ -62,13 +62,16 @@ class FlashCardViewCell: UITableViewCell {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
+        if((wordName?.level)!>Int16(level)){
+            chartdata.levelOfWordChanged(key: "down")
+        }
         wordName?.level = Int16(level)
         try! context.save()
         print(wordName?.spelling)
         print(wordName?.level)
         setControl.reloadData()
         
-        }
+    }
     func changePriorButton(){
             buttonOne.backgroundColor = UIColor.gray
         
@@ -89,10 +92,7 @@ class FlashCardViewCell: UITableViewCell {
             buttonFive.backgroundColor = UIColor.gray
           //  buttonFive.isHighlighted = false;
             buttonFive.isEnabled = true;
-        
-            buttonZero.backgroundColor = UIColor.gray
-          //  buttonZero.isHighlighted = false
-            buttonZero.isEnabled = false
+
         
     }
 }

@@ -30,12 +30,6 @@ public class BarChartFormatter: NSObject, IAxisValueFormatter{
     }
 }
 
-
-
-
-
-
-
 class ChartsViewController: UIViewController {
 
     @IBOutlet weak var barChartView: BarChartView!
@@ -61,7 +55,7 @@ class ChartsViewController: UIViewController {
         let chartdatadown = ChartData(key: "down")
         //var chartdataup = ChartData(key: "up")
         
-        chartdatadown.levelOfWordChanged(key: "down")
+        //chartdatadown.levelOfWordChanged(key: "down")
         
         let wordCounts = chartdatadown.getChartDataValues(key: "down")
         let dates = chartdatadown.getChartDataDates(key: "down")
@@ -72,7 +66,12 @@ class ChartsViewController: UIViewController {
         setChart(dataPoints: dates, values: wordCounts)
 
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        let chartdatadown = ChartData(key: "down")
+        let wordCounts = chartdatadown.getChartDataValues(key: "down")
+        let dates = chartdatadown.getChartDataDates(key: "down")
+        setChart(dataPoints: dates, values: wordCounts)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -11,6 +11,19 @@ import UIKit
 import CoreData
 
 class ProfileViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = false
+        
+        navigationController?.navigationBar.barTintColor = UIColor(red: 85 / 255, green: 172 / 255, blue: 238 / 255, alpha: 1)
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.title = "Profile"
+        let attrs = [
+            NSForegroundColorAttributeName: UIColor.white,
+            //  NSFontAttributeName: UIFont(name: "Georgia-Bold", size: 24)!
+        ]
+        navigationController?.navigationBar.titleTextAttributes = attrs
+    }
     @IBAction func onSyncAction(_ sender: UIButton) {
         addSet()
     }

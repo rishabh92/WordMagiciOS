@@ -99,7 +99,6 @@ extension WordViewController: UITableViewDataSource {
         switch(level){
         case 1:
             cell.buttonOne.backgroundColor = UIColor.brown;
-           
             cell.buttonOne.isEnabled = false;
             break;
         case 2:
@@ -119,8 +118,7 @@ extension WordViewController: UITableViewDataSource {
             cell.buttonFive.isEnabled = false;
             break;
         default:
-            cell.buttonZero.backgroundColor = UIColor.brown;
-            cell.buttonZero.isEnabled = false;
+            
             break
         }
         
