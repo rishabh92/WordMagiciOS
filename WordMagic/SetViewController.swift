@@ -45,7 +45,7 @@ class SetViewController: HCRootViewController {
         //    let str = "Set \(i)"
         //    self.saveSet(name: str)
         //}
-        
+        wordList = [[]]
         
         if (!isAppAlreadyLaunchedOnce()) {
             self.addSet()
@@ -58,13 +58,13 @@ class SetViewController: HCRootViewController {
         }
         
         for set in names{
-            print("VALUE")
-            print(set.name)
+          //  print("VALUE")
+            //print(set.name)
             for words in set.words!{
-                print((words as! Word).spelling)
-                print((words as! Word).level)
+             //   print((words as! Word).spelling)
+              //  print((words as! Word).level)
                 let levelValue:Int = Int((words as! Word).level)
-                print(levelValue)
+              //  print(levelValue)
                 wordList[levelValue].append(words)
             }
         }
@@ -235,7 +235,7 @@ class SetViewController: HCRootViewController {
             self.tableView.reloadData()
             print("abc: end2")
         } catch {
-            fatalError("Failed to fetch employees: \(error)")
+            fatalError("Failed to fetch \(error)")
         }
     }
     
